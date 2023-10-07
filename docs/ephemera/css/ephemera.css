@@ -1,0 +1,440 @@
+/* Color Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Color Palette */
+:root {
+  /* Pink */
+  --palette-pink: #FA8293;
+}
+
+/* 
+The below colors are analogous to the Apple system palette:
+https://noahgilmore.com/blog/dark-mode-uicolor-compatibility/ 
+*/
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --label: rgba(0.0, 0.0, 0.0, 1.0);
+    --secondary-label: rgba(60.0, 60.0, 67.0, 0.6);
+    --tertiary-label: rgba(60.0, 60.0, 67.0, 0.3);
+    --system-fill: rgba(120.0, 120.0, 128.0, 0.2);
+    --secondary-system-fill: rgba(120.0, 120.0, 128.0, 0.16);
+    --tertiary-system-fill: rgba(118.0, 118.0, 128.0, 0.12);
+    --quaternary-system-fill: rgba(116.0, 116.0, 128.0, 0.08);
+    --system-background: rgba(255.0, 255.0, 255.0, 1.0);
+    --secondary-system-background: rgba(242.0, 242.0, 247.0, 1.0);
+    --tertiary-system-background: rgba(255.0, 255.0, 255.0, 1.0);
+    --system-grouped-background: rgba(242.0, 242.0, 247.0, 1.0);
+    --secondary-system-grouped-background: rgba(255.0, 255.0, 255.0, 1.0);
+    --tertiary-system-grouped-background: rgba(242.0, 242.0, 247.0, 1.0);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --label: rgba(255.0, 255.0, 255.0, 1.0);
+    --secondary-label: rgba(235.0, 235.0, 245.0, 0.6);
+    --tertiary-label: rgba(235.0, 235.0, 245.0, 0.3);
+    --system-fill: rgba(120.0, 120.0, 128.0, 0.36);
+    --secondary-system-fill: rgba(120.0, 120.0, 128.0, 0.32);
+    --tertiary-system-fill: rgba(118.0, 118.0, 128.0, 0.24);
+    --quaternary-system-fill: rgba(118.0, 118.0, 128.0, 0.18);
+    --system-background: rgba(0.0, 0.0, 0.0, 1.0);
+    --secondary-system-background: rgba(28.0, 28.0, 30.0, 1.0);
+    --tertiary-system-background: rgba(44.0, 44.0, 46.0, 1.0);
+    --system-grouped-background: rgba(0.0, 0.0, 0.0, 1.0);
+    --secondary-system-grouped-background: rgba(28.0, 28.0, 30.0, 1.0);
+    --tertiary-system-grouped-background: rgba(44.0, 44.0, 46.0, 1.0);
+  }
+
+  /* Invert the footer Deadpan logo color in dark mode. */
+  .deadpan-logo {
+    filter: invert(100%);
+  }
+}
+
+/* Color Assignment */
+:root {
+  --link-unvisited-color: var(--palette-pink);
+  --link-visited-color: var(--palette-pink);
+
+  --body-background-color: var(--secondary-system-background);
+  --header-background-color: var(--secondary-system-background);
+  --hero-background-color: var(--system-background);
+  --tagline-background-color: var(--system-background);
+  --app-store-badge-background-color: var(--system-background);
+  --app-store-badge-lozenge-color: var(--secondary-system-background);
+  --features-background-color: var(--system-background);
+  --privacy-background-color: var(--system-background);
+  --presskit-background-color: var(--system-background);
+  --footer-background-color: var(--secondary-system-background);
+}
+
+/* Normalized Components
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+html, body {
+  /* `overflow-x: hidden;` is required to achieve different section colors that go beyond the section max width size. 
+  Without this selector, the website will scroll horizontally. */
+  overflow-x: hidden;
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background: var(--secondary-system-background);
+}
+
+body {
+  margin: 0;
+  width: 100%;
+}
+
+h1, h2, h3, h4 {
+  margin-top: 0;
+  color: var(--label);
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  color: var(--label);
+}
+
+li {
+  color: var(--label);
+}
+
+a:link, a:hover, a:active {
+  color: var(--link-unvisited-color);
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--link-visited-color);
+  text-decoration: none;
+}
+
+/* Section, row, column system
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+section {
+  margin: 0 auto;
+  max-width: 1000px;
+  position: relative; /* Required for background color full width. */
+  padding: 4rem 2rem;
+}
+
+.row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.25rem;
+}
+
+/* `.row::before` and `.row::after` is required to set a unique background color for left and right sides
+of the section. Override `.row::before` and `.row::after` achieve the background color you need on a per section basis. */
+.row::before, .row::after {
+  background: red;
+  bottom: 0;
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 0;
+  width: 9600px;
+}
+
+.row::after {
+  background: green;
+  left: 100%;
+}
+
+.full-span-column {
+  flex: 1 1 auto;
+}
+
+.half-span-column {
+  flex: 0 1 50%;
+}
+
+.third-span-column {
+  flex: 0 1 30%;
+}
+
+/* Apply this selector to an `<img>` that is wrapped in a `.content` block to achieve a centered image. */
+.centered-image {
+  display: block;
+  height: auto;
+  margin: auto;
+}
+
+/* Header section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.header, .header > .row::before, .header > .row::after {
+  background: var(--header-background-color);
+}
+
+.header-wordmark-column {
+  flex: 1;
+}
+
+.header-app-store-badge-column {
+  margin-left: auto;
+}
+
+.wordmark {
+  width: auto;
+  height: 3rem;
+}
+
+/* Hero Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.hero {
+  padding-bottom: 0;
+}
+
+.hero, .hero > .row::before, .hero > .row::after {
+  background: var(--hero-background-color);
+}
+
+.hero img {
+  max-width: 100%;
+  z-index: 100;
+}
+
+/* Tagline Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.tagline {
+  text-align: center;
+}
+
+.tagline, .tagline > .row::before, .tagline > .row::after {
+  background: var(--tagline-background-color);
+}
+
+/* App Store Badge Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.app-store-badge {
+  text-align: center;
+}
+
+.app-store-badge, .app-store-badge > .row::before, .app-store-badge > .row::after {
+  background: var(--app-store-badge-background-color);
+}
+
+.download-now-lozenge {
+  background: var(--app-store-badge-lozenge-color);
+  border-radius: 1rem;
+  margin: -3rem 0rem;
+  padding: 3rem 1rem;
+}
+
+.app-store-badge img {
+  height: 5rem;
+  width: auto;
+}
+
+/* Features Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.features {
+}
+
+.features > .row {
+  align-items: baseline;
+}
+
+.features, .features > .row::before, .features > .row::after {
+  background: var(--features-background-color);
+}
+
+.features > .row > .full-span-column > h2 {
+  text-align: center;
+}
+
+.features h3 {
+  display: inline;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+
+}
+
+.features img {
+  width: 2rem;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* 
+Colors filters generated using the following website:
+https://isotropic.co/tool/hex-color-to-css-filter/ 
+*/
+
+.features .peace {
+  filter: invert(24%) sepia(36%) saturate(3768%) hue-rotate(263deg) brightness(98%) contrast(104%);
+}
+
+.features .config {
+  filter: invert(55%) sepia(58%) saturate(1982%) hue-rotate(300deg) brightness(92%) contrast(97%);
+}
+
+.features .notifications {
+  filter: invert(74%) sepia(10%) saturate(6948%) hue-rotate(308deg) brightness(115%) contrast(108%);
+}
+
+.features .sync {
+  filter: invert(24%) sepia(36%) saturate(3768%) hue-rotate(263deg) brightness(98%) contrast(104%);
+}
+
+.features .stats {
+  filter: invert(55%) sepia(58%) saturate(1982%) hue-rotate(300deg) brightness(92%) contrast(97%);
+}
+
+.features .widgets {
+  filter: invert(74%) sepia(10%) saturate(6948%) hue-rotate(308deg) brightness(115%) contrast(108%);
+}
+
+
+/* Privacy Policy Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.privacy {
+}
+
+.privacy, .privacy > .row::before, .privacy > .row::after {
+  background: var(--privacy-background-color);
+}
+
+.privacy p {
+  margin-bottom: 2.5rem;
+}
+
+/* Press Kit Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.presskit {
+}
+
+.presskit, .presskit > .row::before, .presskit > .row::after {
+  background: var(--presskit-background-color);
+}
+
+.presskit > .row:nth-child(2n) {
+  margin-top: 2.5rem;
+}
+
+.presskit p {
+  margin-bottom: 2.5rem;
+}
+
+.presskit ul { 
+  font-size: 20px;
+  line-height: 1.5rem;
+}
+
+.presskit .third-span-column img {
+  max-width: 100%;
+}
+
+
+/* Footer Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.footer {
+  text-align: center;
+}
+
+.footer, .footer > .row::before, .footer > .row::after {
+  background: var(--footer-background-color);
+}
+
+.footer img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.footer > .row {
+  flex-wrap: wrap-reverse;
+}
+
+.footer .third-span-column:first-of-type p {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Media Query Overrides
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Large View Port */
+/* Includes all iPhones taller than iPhone 8 in horizontal mode.
+Also includes base model iPad in vertical orientation. */
+@media only screen and (max-width: 960px) {
+
+  /* Decrease the relative font size to 14px. */
+  html {
+    font-size: 87.5%;
+  }
+}
+
+/* Medium View Port */
+@media only screen and (max-width: 720px) {
+
+  /* Change to a full width column layout for all half span column elements. */
+  .half-span-column {
+    flex: 0 1 100%;
+  }
+
+    /* Change to a full width column layout for all third span column elements. */
+  .third-span-column {
+    flex: 0 1 100%;
+  }
+
+  /* Center the Ephemera logo in the header. */
+  .header {
+    text-align: center;
+  }
+
+  /* Remove the App Store badge in the header. */
+  .header-app-store-badge-column {
+    display: none;
+  }
+
+  /* Change the colors of the icons due to the vertical orientation of the feature list. */
+  .features .config {
+    filter: invert(25%) sepia(81%) saturate(1960%) hue-rotate(278deg) brightness(90%) contrast(96%);
+  }
+  
+  .features .notifications {
+    filter: invert(37%) sepia(63%) saturate(1994%) hue-rotate(300deg) brightness(93%) contrast(82%);
+  }
+  
+  .features .sync {
+    filter: invert(50%) sepia(61%) saturate(2405%) hue-rotate(303deg) brightness(98%) contrast(85%);
+  }
+  
+  .features .stats {
+    filter: invert(74%) sepia(38%) saturate(3936%) hue-rotate(305deg) brightness(106%) contrast(96%);
+  }
+}
+
+/* Small View Port */
+@media only screen and (max-width: 540px) {
+}
+

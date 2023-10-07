@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Ephemera</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta property="og:title" content="Ephemera">
+  <meta property="og:description" content="Ephemera is a unique bookmarking app for iOS, iPadOS and macOS.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://deadpan.io/ephemera">
+  <meta property="og:image" content="https://deadpan.io/ephemera/images/ephemera-open-graph-image.png">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  
+  <!-- Fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="./css/ephemera.css">
+
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicons/favicon-16x16.png">
+  <!-- For some strange reason - the below line breaks the color and below the safe areas in Safari on 
+  FaceID capable iphones in light and dark mode. -->
+  <!-- <link rel="manifest" href="/ephemera/images/favicons/site.webmanifest"> -->
+
+</head>
+<body>
+
+<!-- Primary Page Layout
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<!-- Header Section  -->
+
+<section class="header">
+  <div class="row">
+    <div class="header-wordmark-column">
+      <a href="./">
+        <picture>
+          <source srcset="./images/ephemera_icon_wordmark-dark.svg" media="(prefers-color-scheme: dark)">
+          <img src="./images/ephemera_icon_wordmark-light.svg" class="wordmark"/>
+        </picture>
+      </a>
+    </div>
+    <div class="header-app-store-badge-column">
+      <a href="https://apps.apple.com/us/app/ephemera/id1565668129">
+        <picture>
+          <source srcset="./images/app-store-badge-light.svg" media="(prefers-color-scheme: dark)">
+          <img src="./images/app-store-badge-dark.svg" alt="Apple App Store Download Badge"/>
+        </picture>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Hero Section  -->
+
+<section class="hero">
+  <div class="row">
+    <div class="full-span-column">
+      <picture>
+        <source srcset="./images/hero-image-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="./images/hero-image-light.png" alt="iPad and iPhone with Ephemera app."/>
+      </picture>
+    </div>
+  </div>
+</section>
+
+<!-- Tagline Section -->
+
+<section class="tagline">
+  <div class="row">
+    <div class="full-span-column">
+      <h2>Read your bookmarks before they disappear.</h2>
+      <p>
+        Unlike other apps that save bookmarks that stay unread forever, Ephemera sets a deadline that the bookmark must be read by. 
+        Miss the deadline, and that bookmark is gone. It wasn't important anyway, right?
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- App Badge Section -->
+
+<section class="app-store-badge">
+  <div class="row">
+    <div class="full-span-column">
+      <div class="download-now-lozenge">
+        <a href="https://apps.apple.com/us/app/ephemera/id1565668129">
+          <picture>
+            <source srcset="./images/app-store-badge-light.svg" media="(prefers-color-scheme: dark)">
+            <img src="./images/app-store-badge-dark.svg" alt="Apple App Store Download Badge" class="centered-image"/>
+          </picture>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+
+<section class="features">
+  <div class="row">
+    <div class="full-span-column">
+      <h2>Features</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="third-span-column">
+      <img src="./images/peace-icon.svg" alt="Peace Symbol" class="peace">
+      <h3>Peace Of Mind</h3>
+      <p>Never again drown under the weight of of unread, stale, “read later” bookmarks.</p>
+    </div>
+    <div class="third-span-column">
+      <img src="./images/hammer-icon.svg" alt="Hammer Symbol" class="config">
+      <h3>Configurable</h3>
+      <p>Set a default expiration date that best aligns with your reading habits.</p>
+    </div>
+    <div class="third-span-column">
+      <img src="./images/bell-icon.svg" alt="Bell Symbol" class="notifications">
+      <h3>Notifications</h3>
+      <p>Recieve notifications and always be warned before a bookmark expires.</p>
+    </div>
+    <div class="third-span-column">
+      <img src="./images/sync-icon.svg" alt="Sync Symbol" class="sync">
+      <h3>Sync</h3>
+      <p>Sync unread and read bookmarks across iPhone and iPad.</p>
+    </div>
+    <div class="third-span-column">
+      <img src="./images/piechart-icon.svg" alt="Pie Chart Symbol" class="stats">
+      <h3>Statistics</h3>
+      <p>See how many bookmarks you have read and how often bookmarks go unread.</p>
+    </div>
+    <div class="third-span-column">
+      <img src="./images/widget-icon.svg" alt="Widget Symbol" class="widgets">
+      <h3>Widgets</h3>
+      <p>See unread bookmarks on your home screen so you never forget.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+
+<section class="footer">
+  <div class="row">
+    <div class="third-span-column">
+      <a href="../">
+        <img src="./images/deadpan-circle-type.svg" alt="Deadpan Logo" class="deadpan-logo centered-image">
+      </a>
+      <p>Made by Tim Bueno in NYC</p>
+      <p class="copyright">© 2023 Deadpan</p>
+    </div>
+    <div class="third-span-column">
+      <h3>Information</h3>
+      <p><a href="./presskit">Press Kit</a></p>
+      <p><a href="./privacypolicy">Privacy Policy</a></p>
+    </div>
+    <div class="third-span-column">
+      <h3>Contact</h3>
+      <p><a href="mailto:feedback@deadpan.io">Email</a></p>
+      <p><a href="https://mastodon.social/@timbueno">Mastodon</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

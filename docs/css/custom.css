@@ -1,0 +1,319 @@
+/* Color Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Color Palette */
+:root {
+  /* Black */
+  --palette-black: #231F20;
+  /* Pink */
+  --palette-pink: #F2897F;
+  /* Tan */
+  --palette-tan: #F2E0BD;
+  /* White */
+  --palette-white: ##fffcf5;
+}
+
+/* Color Assignment */
+:root {
+  --alternate-font-color: var(--palette-tan);
+  --default-font-color: var(--palette-black);
+  
+  --link-unvisited-color: var(--palette-pink);
+  --link-visited-color: var(--palette-tan);
+
+  --bound-background-color: var(--palette-white);
+  --footer-background-color: var(--palette-black);
+  --header-background-color: var(--palette-black);
+  --hero-background-color: var(--palette-black);
+  --hero-font-color: var(--palette-tan);
+  --testimonial-left-background-color: var(--palette-tan);
+  --testimonial-right-background-color: var(--palette-pink);
+}
+
+/* Normalized Components
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+html, body {
+  /* `overflow-x: hidden;` is required to achieve different section colors that go beyond the section max width size. 
+  Without this selector, the website will scroll horizontally. */
+  overflow-x: hidden;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: var(--link-unvisited-color);
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 6rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2.75rem;
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+
+p {
+  font-family: 'Palanquin', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+/* Section, row, column system
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+section {
+  margin: 0 auto;
+  max-width: 1200px;
+  position: relative; /* Required for background color full width. */
+}
+
+.row {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+/* `.row::before` and `.row::after` is required to set a unique background color for left and right sides
+of the section. Override `.row::before` and `.row::after` achieve the background color you need on a per section basis. */
+.row::before, .row::after {
+  background: red;
+  bottom: 0;
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 0;
+  width: 9600px;
+}
+
+.row::after {
+  background: green;
+  left: 100%;
+}
+
+.full-span-column {
+  flex: 1 1 auto;
+}
+
+.half-span-column {
+  flex: 0 1 50%;
+}
+
+.content {
+  padding: 4rem 3rem;
+}
+
+/* Apply this selector to an `<img>` that is wrapped in a `.content` block to achieve a centered image. */
+.centered-image {
+  display: block;
+  height: auto;
+  margin: auto;
+  max-width: 50%;
+}
+
+.divider {
+  background-color: var(--hero-font-color);
+  height: 0.5rem;
+  width: 10rem;
+  margin-top: 2rem;
+}
+
+/* Header section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.header {
+  color: var(--hero-font-color);
+}
+
+.header, .header::before, .header::after {
+  background: var(--header-background-color);
+}
+
+.header .content {
+  padding-bottom: 1.5rem;
+}
+
+.wordmark {
+  width: auto;
+  height: 3rem;
+}
+
+/* Hero section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.hero .half-span-column:first-child p {
+  margin-bottom: 0px;
+}
+
+.hero {
+  color: var(--hero-font-color);
+}
+
+.hero, .hero::before, .hero::after {
+  background: var(--hero-background-color);
+}
+
+.hero .divider {
+  background-color: var(--hero-font-color);
+}
+
+.hero > .half-span-column:last-of-type .content:last-of-type {
+  padding: 1rem 4rem 1rem 1rem;
+}
+
+.hero img {
+  max-width: 100%;
+  margin: auto;
+  z-index: 100;
+  position: relative;
+  margin-bottom: -6.25rem;
+}
+
+/* Testimonial Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.testimonial {
+  color: var(--default-font-color);
+}
+
+/* The row and column system is set to align items in the center of the row. At different view port size either side 
+may be smaller than the other. This results in the background color of the row being shown under a column.
+We must set the background color of the row with a hard gradient. */
+.testimonial {
+  background: linear-gradient(
+    to right, 
+    var(--testimonial-left-background-color) 0%, 
+    var(--testimonial-left-background-color) 50%, 
+    var(--testimonial-right-background-color) 50%, 
+    var(--testimonial-right-background-color) 100%
+  );
+}
+
+.testimonial-left, .testimonial::before, .testimonial::after {
+  background: var(--testimonial-left-background-color);
+}
+
+.testimonial-right, .testimonial::after {
+  background: var(--testimonial-right-background-color);
+}
+
+.quote-image {
+  height: 3rem;
+  width: 3rem;
+}
+
+.testimonial > .half-span-column:first-of-type p:first-of-type {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.testimonial > .half-span-column:first-of-type p:last-child {
+  margin-bottom: 0px;
+}
+
+/* App Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.app, .app::before, .app::after {
+  background: var(--bound-background-color);
+}
+
+.app .divider {
+  background: var(--testimonial-right-background-color);
+}
+
+.app > .half-span-column:first-of-type h3 {
+  margin-bottom: 0px;
+}
+
+/* Footer Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.footer {
+  color: var(--alternate-font-color);
+}
+
+.footer, .footer::before, .footer::after {
+  background: var(--footer-background-color);
+}
+
+.footer img {
+  margin: 2rem 2rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+.footer p {
+  margin-top: 0;
+}
+
+/* Media Query Overrides
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Large View Port */
+/* Includes all iPhones taller than iPhone 8 in horizontal mode.
+Also includes base model iPad in vertical orientation. */
+@media only screen and (max-width: 960px) {
+
+  /* Decrease the relative font size to 14px. */
+  html {
+    font-size: 87.5%;
+  }
+
+  h1 {
+    font-size: 4.7rem;
+  }
+
+  /* Increase the shift of the hero image due to the relative font size changing. */
+  .hero img {
+    margin-bottom: -7.25rem;
+  }
+}
+
+/* Medium View Port */
+@media only screen and (max-width: 720px) {
+  /* Change to a full width column layout for all half span column elements. */
+  .half-span-column {
+    flex: 0 1 100%;
+  }
+
+  /* Shrink the top and bottom padding of the hero image. */
+  .hero > .half-span-column:last-of-type .content:last-of-type {
+    padding: 2rem 2rem;
+  }
+
+  /* Remove padding below the first half span column. */
+  .app > .half-span-column:first-of-type > .content {
+    padding-bottom: 0;
+  }
+
+  /* Increase the padding of the last app image half span. */
+  .app:last-of-type > .half-span-column:last-of-type > .content {
+    padding-bottom: 6rem;
+  }
+}
+
+/* Small View Port */
+@media only screen and (max-width: 540px) {
+}

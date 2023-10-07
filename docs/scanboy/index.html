@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>ScanBoy</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta property="og:title" content="ScanBoy">
+  <meta property="og:description" content="ScanBoy is a unique document scanning app for iOS and iPadOS.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://deadpan.io/scanboy">
+  <meta property="og:image" content="https://deadpan.io/scanboy/images/scanboy-open-graph-image.png">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  
+  <!-- Fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="./css/scanboy.css">
+
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="./scripts/anime.min.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicons/favicon-16x16.png">
+  <!-- For some strange reason - the below line breaks the color and below the safe areas in Safari on 
+  FaceID capable iphones in light and dark mode. -->
+  <!-- <link rel="manifest" href="./images/favicons/site.webmanifest"> -->
+
+</head>
+<body>
+
+<!-- Primary Page Layout
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<!-- Header Section  -->
+
+<section class="header">
+  <div class="row">
+    <div class="header-wordmark-column">
+      <a href="./">
+        <picture>
+          <source srcset="./images/scanboy-wordmark-dark.svg" media="(prefers-color-scheme: dark)">
+          <img src="./images/scanboy-wordmark-light.svg" class="wordmark"/>
+        </picture>
+      </a>
+    </div>
+    <div class="header-app-store-badge-column">
+      <a href="https://itunes.apple.com/app/scanboy/id6446224625">
+        <picture>
+          <source srcset="./images/app-store-badge-light.svg" media="(prefers-color-scheme: dark)">
+          <img src="./images/app-store-badge-dark.svg" alt="Apple App Store Download Badge"/>
+        </picture>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Hero Section  -->
+
+<section class="hero">
+  <div class="row">
+    <div class="full-span-column">
+      <svg class="blob" id="morphing" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3305 2433">
+        <path class="p" d="M1415.88 9.98422C1100.35 54.8552 696.53 203.348 460.673 361.242C205.043 532.372 87.0958 676.987 27.1428 892.826C-21.0191 1066.18 -5.30989 1308.4 76.047 1647.1C85.8181 1687.81 100.529 1755.11 108.731 1796.66C128.383 1896.2 194.322 1995.27 277.602 2050.37C329 2084.37 383.733 2103.43 675.759 2189C1306.79 2373.9 1631.62 2433 2016.88 2433C2319.15 2433 2504.31 2372.57 2742.81 2196.08C3031.82 1982.2 3269.33 1605.63 3302.18 1309.21C3327.11 1084.16 3186.15 808.367 2908.59 539.123C2830.89 463.745 2652.1 329.346 2526.15 251.63C2317.04 122.605 2164.04 58.1504 1983.44 23.004C1862.17 -0.600046 1542 -7.94269 1415.88 9.98422Z" fill="#FF8B61" fill-opacity="0.33"/>
+      </svg>
+      <picture>
+        <source srcset="./images/hero-image-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="./images/hero-image-light.png" alt="iPad and iPhone with ScanBoy app."/>
+      </picture>
+    </div>
+  </div>
+</section>
+
+<!-- Tagline Section -->
+
+<section class="tagline">
+  <div class="row">
+    <div class="full-span-column">
+      <h2>Fast document scanning with an AI twist.</h2>
+      <p>
+        ScanBoy is a lightning fast document scanner. Create high quality PDFs with selectable text and quickly
+        generate filenames using artificial intelligence so that you can move on with your day. If you want to name
+        your own documents and avoid using AI altogether, you can do that too.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- App Badge Section -->
+
+<section class="app-store-badge">
+  <div class="row">
+    <div class="full-span-column">
+      <div class="download-now-lozenge">
+        <a href="https://itunes.apple.com/app/scanboy/id6446224625">
+          <picture>
+            <source srcset="./images/app-store-badge-light.svg" media="(prefers-color-scheme: dark)">
+            <img src="./images/app-store-badge-dark.svg" alt="Apple App Store Download Badge" class="centered-image"/>
+          </picture>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+
+<section class="features">
+  <div class="row">
+    <div class="full-span-column">
+      <h2><span>Features</span></h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="half-span-column">
+      <div class="feature">
+        <img src="./images/scan-doc-icon.svg" alt="Document Scan Icon" class="doc-scan">
+        <h3>Get in. Get out.</h3>
+        <p>Scan and process documents quickly. Save all documents to your favorite folder.</p>
+      </div>
+    </div>
+    <div class="half-span-column">
+      <div class="feature">
+        <img src="./images/selectable-text-icon.svg" alt="Text Selection Icon" class="text-selection">
+        <h3>Selectable Text</h3>
+        <p>Quick optical character recognition algorithm processes all documents so you can select text later.</p>
+      </div>
+    </div>
+    <div class="half-span-column">
+      <div class="feature">
+        <img src="./images/template-icon.svg" alt="Filename Template Icon" class="template">
+        <h3>Templates</h3>
+        <p>If you scan the same types of document often, save time naming them with filename templates.</p>
+      </div>
+    </div>
+    <div class="half-span-column">
+      <div class="feature">
+        <img src="./images/sparkles-icon.svg" alt="Sparkle Icon" class="sparkle">
+        <h3>AI Filenames</h3>
+        <p>Generate short, concise filenames based on the content of your scanned document.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+
+<section class="footer">
+  <div class="row">
+    <div class="third-span-column">
+      <a href="../">
+        <img src="./images/deadpan-circle-type.svg" alt="Deadpan Logo" class="deadpan-logo centered-image">
+      </a>
+      <p>Made by Tim Bueno in NYC</p>
+      <p class="copyright">© 2023 Deadpan</p>
+    </div>
+    <div class="third-span-column">
+      <h3>Information</h3>
+      <p><a href="./presskit">Press Kit</a></p>
+      <p><a href="./privacypolicy">Privacy Policy</a></p>
+    </div>
+    <div class="third-span-column">
+      <h3>Contact</h3>
+      <p><a href="mailto:feedback@deadpan.io">Email</a></p>
+      <p><a href="https://mastodon.social/@timbueno">Mastodon</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script>
+  var morphing = anime({
+    targets: '#morphing .p',
+    d: [	
+      { value: 'M1068.09 52.3083C752.552 97.1793 755.943 166.414 520.086 324.308C264.456 495.438 128.039 508.469 68.0859 724.308C19.9241 897.658 29.7762 1317.71 111.133 1656.41C120.904 1697.11 135.616 1764.42 143.817 1805.97C163.469 1905.5 228.807 2049.21 312.086 2104.31C363.485 2138.32 504.061 2198.74 796.086 2284.31C1427.12 2469.21 1826.83 2340.31 2212.09 2340.31C2514.36 2340.31 2621.58 2236.17 2860.09 2059.67C3149.09 1845.8 3227.24 1596.73 3260.09 1300.31C3285.02 1075.25 3221.24 817.676 2943.68 548.432C2865.97 473.053 2746.04 402.024 2620.09 324.308C2410.97 195.283 2144.69 135.455 1964.09 100.308C1842.82 76.7042 1194.21 34.3813 1068.09 52.3083Z' },
+      { value: 'M1415.88 9.98422C1100.35 54.8552 696.53 203.348 460.673 361.242C205.043 532.372 87.0958 676.987 27.1428 892.826C-21.0191 1066.18 -5.30989 1308.4 76.047 1647.1C85.8181 1687.81 100.529 1755.11 108.731 1796.66C128.383 1896.2 194.322 1995.27 277.602 2050.37C329 2084.37 383.733 2103.43 675.759 2189C1306.79 2373.9 1631.62 2433 2016.88 2433C2319.15 2433 2504.31 2372.57 2742.81 2196.08C3031.82 1982.2 3269.33 1605.63 3302.18 1309.21C3327.11 1084.16 3186.15 808.367 2908.59 539.123C2830.89 463.745 2652.1 329.346 2526.15 251.63C2317.04 122.605 2164.04 58.1504 1983.44 23.004C1862.17 -0.600046 1542 -7.94269 1415.88 9.98422Z' },
+    ],
+    easing: 'easeInOutSine',
+    duration: 7500,
+    direction: 'infinite alternate',
+    loop: true
+  });
+</script>
+</body>
+</html>
