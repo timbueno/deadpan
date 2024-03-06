@@ -205,6 +205,12 @@ cite {
   }
 }
 
+/* FAQ
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.g-drive-note {
+  color: red;
+}
+
 /* Bigger than 750 */
 @media (min-width: 750px) {
   .logo {
