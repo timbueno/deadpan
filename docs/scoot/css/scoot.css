@@ -381,8 +381,13 @@ https://isotropic.co/tool/hex-color-to-css-filter/
   margin-top: 2.5rem;
 }
 
+.presskit h3 {
+  margin-bottom: 0.5rem;
+}
+
 .presskit p {
-  margin-bottom: 2.5rem;
+  margin-top: 0rem;
+  margin-bottom: 2rem;
 }
 
 .presskit ul {
@@ -396,7 +401,6 @@ https://isotropic.co/tool/hex-color-to-css-filter/
 .presskit .quarter-span-column img {
   max-width: 100%;
 }
-
 
 /* Footer Section
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
