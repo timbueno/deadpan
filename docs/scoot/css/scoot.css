@@ -5,8 +5,11 @@
 :root {
   --palette-primary: #409C94;
   --palette-primary-background-light: #ecfff6;
+  --palette-secondary-background-light: #d3ffea;
   --palette-primary-background-dark: #1a231f;
+  --palette-secondary-background-dark: #5c7b6d;
   --palette-secondary: #409C94;
+  --palette-secondary-dark: #4fd1c6;
 }
 
 /* 
@@ -30,7 +33,10 @@ https://noahgilmore.com/blog/dark-mode-uicolor-compatibility/
     --secondary-system-grouped-background: rgba(255.0, 255.0, 255.0, 1.0);
     --tertiary-system-grouped-background: rgba(242.0, 242.0, 247.0, 1.0);
 
+    --custom-divider-color: var(--palette-secondary);
+    --custom-link-color: var(--palette-secondary);
     --custom-background: var(--palette-primary-background-light);
+    --custom-secondary-background: var(--palette-secondary-background-light);
   }
 }
 
@@ -50,7 +56,10 @@ https://noahgilmore.com/blog/dark-mode-uicolor-compatibility/
     --secondary-system-grouped-background: rgba(28.0, 28.0, 30.0, 1.0);
     --tertiary-system-grouped-background: rgba(44.0, 44.0, 46.0, 1.0);
 
+    --custom-divider-color: var(--palette-secondary-dark);
+    --custom-link-color: var(--palette-secondary-dark);
     --custom-background: var(--palette-primary-background-dark);
+    --custom-secondary-background: var(--palette-secondary-background-dark);
   }
 
   /* Invert the footer Deadpan logo color in dark mode. */
@@ -61,8 +70,9 @@ https://noahgilmore.com/blog/dark-mode-uicolor-compatibility/
 
 /* Color Assignment */
 :root {
-  --link-unvisited-color: var(--palette-secondary);
-  --link-visited-color: var(--palette-secondary);
+  --divider-color: var(--custom-divider-color);
+  --link-unvisited-color: var(--custom-link-color);
+  --link-visited-color: var(--custom-link-color);
 
   --body-background-color: var(--custom-background);
   --header-background-color: var(--custom-background);
@@ -70,10 +80,10 @@ https://noahgilmore.com/blog/dark-mode-uicolor-compatibility/
   --tagline-background-color: var(--custom-background);
   --app-store-badge-background-color: var(--custom-background);
   --app-store-badge-lozenge-color: var(--custom-background);
-  --features-background-color: var(--custom-background);
+  --features-background-color: var(--custom-secondary-background);
   --privacy-background-color: var(--custom-background);
   --presskit-background-color: var(--custom-background);
-  --footer-background-color: var(--custom-background);
+  --footer-background-color: var(--custom-secondary-background);
 }
 
 /* Normalized Components
@@ -278,6 +288,27 @@ of the section. Override `.row::before` and `.row::after` achieve the background
   width: auto;
 }
 
+/* Hill Divider Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.hill-divider {
+  width: 100%;
+  height: 100px; /* Adjust the height as needed */
+  overflow: hidden;
+  line-height: 0;
+}
+
+.hill-divider svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hill-divider path {
+  /* Customize the hill color to match your theme */
+  fill: var(--custom-secondary-background);
+}
+
 /* Features Section
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -307,7 +338,7 @@ of the section. Override `.row::before` and `.row::after` achieve the background
 .features span::after {
   content: '';
   height: 5px;
-  background: var(--palette-secondary);
+  background: var(--divider-color);
   border-radius: 2.5px;
   display: block;
   margin-top: 6px;
