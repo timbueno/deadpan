@@ -233,6 +233,7 @@ of the section. Override `.row::before` and `.row::after` achieve the background
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .hero {
+  padding: 0;
 }
 
 .hero, .hero > .row::before, .hero > .row::after {
@@ -243,15 +244,6 @@ of the section. Override `.row::before` and `.row::after` achieve the background
   max-width: 100%;
   z-index: 100;
   position: relative;
-}
-
-.hero svg {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
 }
 
 /* Tagline Section
@@ -511,8 +503,21 @@ Also includes base model iPad in vertical orientation. */
 
 /* Small View Port */
 @media only screen and (max-width: 540px) {
+  .header {
+    padding-bottom: 1rem;
+  }
+
   .hero > .row > .full-span-column {
     padding: 1.5rem;
+  }
+
+  .tagline {
+    padding-top: 1rem;
+  }
+  
+  .app-store-badge {
+    padding-top: 0rem;
+    padding-bottom: 1rem;
   }
 }
 
