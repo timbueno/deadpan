@@ -62,7 +62,7 @@ section {
   margin: 0 auto;
   display: flex;
   gap: 2rem;
-  align-items: center;
+  align-items: flex-start;
   padding: 2.5rem 0;
 }
 
@@ -91,10 +91,11 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(3rem, 5vw, 5rem);
+  font-size: clamp(3rem, 4.8vw, 4.8rem);
   line-height: 0.94;
   letter-spacing: -0.04em;
   margin-bottom: 1.5rem;
+  max-width: 8.4ch;
 }
 
 h2 {
@@ -211,11 +212,16 @@ a {
 .hero-row {
   padding-top: 3.5rem;
   padding-bottom: 4.5rem;
+  align-items: center;
 }
 
 .hero-copy-column,
 .hero-art-column {
   flex: 0 1 calc(50% - 1rem);
+}
+
+.hero-copy-column {
+  padding-top: 0.5rem;
 }
 
 .hero-body {
@@ -261,6 +267,8 @@ a {
 
 .hero-art-frame {
   position: relative;
+  max-width: 36rem;
+  margin: 2rem auto 0;
 }
 
 .hero-art-card,
@@ -275,13 +283,13 @@ a {
 
 .hero-art-card {
   border-radius: 2rem;
-  padding: 2rem;
+  padding: 2.25rem;
   transform: rotate(-5deg);
 }
 
 .hero-icon {
   width: 100%;
-  max-width: 380px;
+  max-width: 360px;
   display: block;
   margin: 0 auto;
   border-radius: 2rem;
@@ -289,9 +297,9 @@ a {
 
 .hero-quote-card {
   position: absolute;
-  right: -1rem;
-  bottom: 1.75rem;
-  max-width: 15rem;
+  right: -1.5rem;
+  bottom: 2rem;
+  max-width: 16rem;
   border-radius: 1.4rem;
   padding: 1.2rem 1.1rem;
   background: var(--paper);
@@ -340,6 +348,7 @@ a {
 .preview-grid {
   align-items: stretch;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .preview-card {
@@ -352,10 +361,47 @@ a {
   flex-basis: 100%;
 }
 
+.preview-card-phone {
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-image-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at top left, rgba(176, 112, 64, 0.14), transparent 32%),
+    linear-gradient(180deg, rgba(246, 242, 236, 0.96) 0%, rgba(237, 233, 226, 0.92) 100%);
+}
+
+.preview-image-stage-wide {
+  aspect-ratio: 16 / 10;
+  padding: 0;
+}
+
+.preview-image-stage-tall {
+  aspect-ratio: 4 / 5;
+  padding: 1.75rem 1rem 0;
+}
+
 .preview-card img {
   display: block;
   width: 100%;
   background: var(--paper-hero);
+}
+
+.preview-image-stage-wide img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-image-stage-tall img {
+  width: min(100%, 18rem);
+  height: auto;
+  object-fit: contain;
+  object-position: center top;
+  filter: drop-shadow(0 18px 28px rgba(52, 43, 32, 0.14));
 }
 
 .preview-caption {
@@ -500,6 +546,11 @@ a {
 
   .hero-highlights {
     max-width: none;
+  }
+
+  .preview-image-stage-tall {
+    aspect-ratio: auto;
+    padding: 1.5rem 1rem 0;
   }
 
   .footer .row {
