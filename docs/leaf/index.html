@@ -21,7 +21,7 @@
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="./css/leaf.css">
+  <link rel="stylesheet" href="./css/leaf.css?v=20260726w">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -79,61 +79,18 @@
       </div>
     </div>
     <div class="hero-art-column">
-      <div class="hero-composition" aria-hidden="true">
-        <div class="hero-orb hero-orb-one"></div>
-        <div class="hero-orb hero-orb-two"></div>
-        <div class="hero-floating-card hero-floating-card-top">
-          <p class="floating-label">Import</p>
-          <p class="floating-title">Your EPUBs, already at home.</p>
-        </div>
-        <div class="hero-device-frame">
-          <div class="hero-device-header">
-            <span class="library-pill">Library</span>
-            <span class="library-status">Synced with iCloud</span>
-          </div>
-          <div class="hero-device-shelf">
-            <span class="book-spine spine-olive"></span>
-            <span class="book-spine spine-gold"></span>
-            <span class="book-spine spine-ink"></span>
-            <span class="book-spine spine-sage"></span>
-          </div>
-          <div class="hero-device-card">
-            <p class="device-label">Currently reading</p>
-            <h3>The Book at the End of the Shelf</h3>
-            <div class="device-progress-row">
-              <span>Page 184</span>
-              <span>67%</span>
-            </div>
-            <div class="device-progress-bar">
-              <span></span>
-            </div>
-          </div>
-          <div class="hero-device-grid">
-            <div class="device-grid-card">
-              <p class="device-label">Shelves</p>
-              <p>Essays</p>
-            </div>
-            <div class="device-grid-card">
-              <p class="device-label">Series</p>
-              <p>4 tracked</p>
-            </div>
-            <div class="device-grid-card">
-              <p class="device-label">Unread</p>
-              <p>12 books</p>
-            </div>
-            <div class="device-grid-card">
-              <p class="device-label">Catalogs</p>
-              <p>OPDS ready</p>
-            </div>
-          </div>
-        </div>
-        <div class="hero-floating-card hero-floating-card-bottom">
-          <img src="./images/leaf-hero-mark.svg" alt="" class="hero-mark">
-          <div>
-            <p class="floating-label">Organize</p>
-            <p class="floating-title">Shelves, series, ratings, and reading status.</p>
-          </div>
-        </div>
+      <div class="hero-composition">
+        <picture class="hero-picture">
+          <source
+            srcset="./images/leaf-hero-devices.png?v=20260726b"
+            media="(max-width: 720px)"
+          >
+          <img
+            src="./images/leaf-hero-devices-vertical.png?v=20260726b"
+            alt="Leaf library and reading views displayed on an iPad and iPhone"
+            class="hero-image"
+          >
+        </picture>
       </div>
     </div>
   </div>
@@ -150,29 +107,6 @@
         Leaf sits in the middle: a thoughtful place to keep your library in order without making the act of reading
         feel clinical.
       </p>
-      <div class="tagline-highlights">
-        <div class="highlight-card">
-          <div class="highlight-title-row">
-            <span class="highlight-title-icon highlight-title-icon-one" aria-hidden="true"></span>
-            <p class="highlight-title">Bring your own books</p>
-          </div>
-          <p>Import EPUBs you already own instead of starting over in a closed storefront.</p>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-title-row">
-            <span class="highlight-title-icon highlight-title-icon-two" aria-hidden="true"></span>
-            <p class="highlight-title">Keep the collection tidy</p>
-          </div>
-          <p>Shelves, series, ratings, and status make a large library feel legible again.</p>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-title-row">
-            <span class="highlight-title-icon highlight-title-icon-three" aria-hidden="true"></span>
-            <p class="highlight-title">Keep reading in sync</p>
-          </div>
-          <p>Your library and your place travel together across iPhone, iPad, and Mac with iCloud.</p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -186,90 +120,110 @@
         <p class="eyebrow">What Leaf does well</p>
         <h2><span>Features</span></h2>
         <p class="section-note">
-          Three essentials for people who want their reading app to feel as considered as the books inside it.
+          Four essentials for people who want their reading app to feel as considered as the books inside it.
         </p>
       </div>
     </div>
   </div>
 
   <div class="row feature-gallery">
-    <div class="feature-gallery-card">
-      <div class="preview-image-stage preview-image-stage-reader" aria-hidden="true">
-        <div class="reader-preview">
-          <div class="reader-preview-header"></div>
-          <div class="reader-preview-page">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span class="short-line"></span>
-          </div>
-          <div class="reader-preview-footer">
-            <span>Chapter 8</span>
-            <span>184</span>
-          </div>
-        </div>
-      </div>
+    <article class="feature-gallery-card">
+      <button
+        type="button"
+        class="feature-screenshot"
+        data-screenshot-title="Leaf reader"
+        aria-label="Enlarge the Leaf reader screenshot"
+      >
+        <img
+          src="./images/leaf-feature-sage.png"
+          alt=""
+          class="feature-screenshot-visual"
+        >
+      </button>
       <div class="feature">
         <p class="feature-kicker">Read</p>
         <h3>A reader that gets out of the way</h3>
-        <p>Open EPUB books in a dedicated reader, keep your place automatically, and return to the page without hunting for where you left off.</p>
+        <p>Read EPUBs in a focused reader that remembers exactly where you left off.</p>
       </div>
-    </div>
+    </article>
 
-    <div class="feature-gallery-card">
-      <div class="preview-image-stage preview-image-stage-library" aria-hidden="true">
-        <div class="library-preview">
-          <div class="library-preview-shelf">
-            <span class="book-spine spine-olive"></span>
-            <span class="book-spine spine-gold"></span>
-            <span class="book-spine spine-sage"></span>
-            <span class="book-spine spine-ink"></span>
-          </div>
-          <div class="library-preview-meta">
-            <p class="device-label">Shelf</p>
-            <h3>Summer Reads</h3>
-            <div class="library-chip-row">
-              <span>Series</span>
-              <span>Rated</span>
-              <span>Unread</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <article class="feature-gallery-card">
+      <button
+        type="button"
+        class="feature-screenshot"
+        data-screenshot-title="Leaf library organization"
+        aria-label="Enlarge the Leaf library organization screenshot"
+      >
+        <img
+          src="./images/leaf-feature-sage.png"
+          alt=""
+          class="feature-screenshot-visual"
+        >
+      </button>
       <div class="feature">
         <p class="feature-kicker">Organize</p>
-        <h3>A library arranged like a library</h3>
-        <p>Sort books into shelves, track series, rate favorites, and keep tabs on what is unread, in progress, or finished without losing the pleasure of browsing.</p>
+        <h3>A library arranged like one</h3>
+        <p>Build shelves, track series, rate favorites, and see what is unread, underway, or finished.</p>
       </div>
-    </div>
+    </article>
 
-    <div class="feature-gallery-card">
-      <div class="preview-image-stage preview-image-stage-catalog" aria-hidden="true">
-        <div class="catalog-preview">
-          <div class="catalog-preview-search">Browse catalogs</div>
-          <div class="catalog-preview-row">
-            <span>Standard Ebooks</span>
-            <span>Open</span>
-          </div>
-          <div class="catalog-preview-row">
-            <span>Project Gutenberg</span>
-            <span>Open</span>
-          </div>
-          <div class="catalog-preview-row">
-            <span>Indie archive</span>
-            <span>Saved</span>
-          </div>
-        </div>
-      </div>
+    <article class="feature-gallery-card">
+      <button
+        type="button"
+        class="feature-screenshot"
+        data-screenshot-title="Leaf catalog browsing"
+        aria-label="Enlarge the Leaf catalog browsing screenshot"
+      >
+        <img
+          src="./images/leaf-feature-sage.png"
+          alt=""
+          class="feature-screenshot-visual"
+        >
+      </button>
       <div class="feature">
         <p class="feature-kicker">Discover</p>
-        <h3>Catalogs when you want to wander</h3>
-        <p>Browse OPDS catalogs, import new finds, and let discovery live right next to the books you already keep close.</p>
+        <h3>Catalogs made for wandering</h3>
+        <p>Browse OPDS catalogs and bring new finds straight into your library.</p>
       </div>
-    </div>
+    </article>
 
-</div>
+    <article class="feature-gallery-card">
+      <button
+        type="button"
+        class="feature-screenshot"
+        data-screenshot-title="Leaf iCloud sync"
+        aria-label="Enlarge the Leaf iCloud sync screenshot"
+      >
+        <img
+          src="./images/leaf-feature-sage.png"
+          alt=""
+          class="feature-screenshot-visual"
+        >
+      </button>
+      <div class="feature">
+        <p class="feature-kicker">Sync</p>
+        <h3>Your place, everywhere</h3>
+        <p>Keep books and reading progress together across iPhone, iPad, and Mac with iCloud.</p>
+      </div>
+    </article>
+  </div>
 </section>
+
+<div
+  class="screenshot-lightbox"
+  id="screenshot-lightbox"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Enlarged Leaf screenshot"
+  hidden
+>
+  <div class="screenshot-lightbox-shell">
+    <button type="button" class="screenshot-lightbox-close" aria-label="Close enlarged screenshot">
+      <span aria-hidden="true">×</span>
+    </button>
+    <div class="screenshot-lightbox-media"></div>
+  </div>
+</div>
 
 <!-- App Badge Section -->
 
@@ -316,5 +270,6 @@
   </div>
 </section>
 
+<script src="./scripts/leaf.js?v=20260726q"></script>
 </body>
 </html>
