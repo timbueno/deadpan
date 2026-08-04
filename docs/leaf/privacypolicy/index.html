@@ -9,7 +9,7 @@
   <meta name="description" content="Privacy Policy for Leaf, the EPUB reader and library manager for iPhone, iPad, and Mac.">
   <meta name="author" content="">
   <meta property="og:title" content="Leaf Privacy Policy">
-  <meta property="og:description" content="Learn how Leaf handles analytics, purchases, and reading data.">
+  <meta property="og:description" content="Learn how Leaf handles analytics and reading data.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://deadpan.io/leaf/privacypolicy">
   <meta property="og:image" content="https://deadpan.io/leaf/images/leaf-app-icon.png">
@@ -20,8 +20,16 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("leaf-color-scheme");
+      if (savedTheme === "light" || savedTheme === "dark") {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    } catch {}
+  </script>
   <link rel="stylesheet" href="../../css/normalize.css">
-  <link rel="stylesheet" href="../css/leaf.css">
+  <link rel="stylesheet" href="../css/leaf.css?v=20260804i">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -39,7 +47,7 @@
         <img src="../images/leaf-app-icon.png" alt="Leaf app icon" class="brand-icon">
         <div class="brand-wordmark">
           <span class="brand-name">Leaf</span>
-          <span class="brand-subtitle">EPUB reader and library manager</span>
+          <span class="brand-subtitle">EPUB reader and personal library</span>
         </div>
       </a>
     </div>
@@ -52,7 +60,7 @@
       <p class="eyebrow">Privacy Policy</p>
       <h1>How Leaf handles your data.</h1>
       <p class="privacy-intro">
-        Leaf takes your privacy very seriously and keeps the app focused on reading, not surveillance.
+        Details about the limited analytics Leaf collects and how your reading data is protected.
       </p>
     </div>
   </div>
@@ -64,14 +72,66 @@
       <div class="privacy-card">
         <div class="privacy-copy">
           <p>Leaf takes your privacy very seriously.</p>
-          <p>If you have opted into allowing Apple to share information with developers, we receive some anonymous analytics.</p>
-          <p>Leaf does not sell or rent your data, and the anonymous information collected is used only for improving the app.</p>
-          <p>Leaf also integrates the RevenueCat SDK which captures some analytics related to in-app purchases and subscriptions. You can find RevenueCat's privacy policy <a href="https://www.revenuecat.com/privacy/">here</a>.</p>
-          <p>Leaf does not store any of your reading data on external servers.</p>
+          <p>
+            Leaf uses PostHog to collect limited app usage analytics, such as feature usage,
+            aggregate reading activity, and basic app and device information. Events may include
+            a pseudonymous Leaf analytics identifier and a source label indicating whether it came
+            from iCloud or this app installation.
+          </p>
+          <p>
+            When iCloud Sync is enabled and Leaf can validate
+            the current iCloud account, Leaf deterministically derives the identifier from Leaf's
+            app-specific CloudKit user record so events from devices using that account can be
+            associated. Leaf never stores or sends the raw CloudKit record identifier. Leaf stores
+            the derived identifier locally with Apple's opaque iCloud account token so it can reuse
+            a cached identifier only for the matching account; that token is never sent to PostHog.
+          </p>
+          <p>
+            During a temporary CloudKit failure, Leaf reuses only a cached identifier validated for
+            that account; without one, events omit Leaf's identity fields until CloudKit resolves.
+            When iCloud Sync is off or CloudKit reports no authenticated account, Leaf uses a random
+            identifier stored locally in the app's preferences. PostHog also uses its own randomly
+            generated app-installation identifier to process analytics events. Leaf does not use
+            advertising or hardware identifiers.
+          </p>
+          <p>
+            Book-related events include an opaque library book
+            identifier so activity for the same synced book can be associated across devices. They
+            may also include structural metadata already stored by Leaf, such as file size, position
+            count, language, publication year, whether basic metadata or a cover is present, and the
+            total number of books in the library after an import or deletion. Analytics events do not
+            include book titles, author names, Source names, file paths, filenames, file hashes,
+            source URLs, iCloud account names, or email addresses. They also do not include a book's
+            exact reading location.
+          </p>
+          <p>
+            You can disable this collection at any time using the Share
+            Analytics toggle in Settings. Turning it off stops future analytics collection; locally
+            stored identifiers may remain so Leaf can reuse them if analytics is enabled again. You
+            can find PostHog's
+            privacy policy <a href="https://posthog.com/privacy">here</a>.
+          </p>
+          <p>
+            If you have opted into allowing Apple to share information with developers, we receive
+            some anonymous analytics from Apple.
+          </p>
+          <p>
+            Leaf does not sell or rent your data. The analytics information collected is used only to
+            improve the app. Leaf does not send book files, book text, or descriptive library fields
+            such as titles and author names to analytics services.
+          </p>
         </div>
 
         <div class="privacy-updates">
           <h2>Changes to this policy</h2>
+          <div class="policy-update">
+            <p class="policy-update-date">July 22, 2026</p>
+            <p>Clarified the iCloud and installation sources of pseudonymous analytics identifiers, local account-scoped caching, and when identity fields may be omitted.</p>
+          </div>
+          <div class="policy-update">
+            <p class="policy-update-date">July 16, 2026</p>
+            <p>Documented optional PostHog app and reading analytics, pseudonymous user and book identifiers, structural metadata, and the in-app opt-out control.</p>
+          </div>
           <div class="policy-update">
             <p class="policy-update-date">November 13, 2025</p>
             <p>Documented initial privacy policy for Leaf.</p>
@@ -79,33 +139,43 @@
         </div>
       </div>
 
-      <p class="privacy-back-link"><a href="../">Back to Leaf</a></p>
     </div>
   </div>
 </section>
 
 <section class="footer">
   <div class="row">
-    <div class="third-span-column">
+    <div class="third-span-column footer-brand-column">
       <a href="../../">
         <img src="../images/deadpan-circle-type.svg" alt="Deadpan Logo" class="deadpan-logo centered-image">
       </a>
       <p>Made by Tim Bueno in NYC</p>
       <p class="copyright">© 2026 Deadpan</p>
     </div>
-    <div class="third-span-column">
-      <h3>Leaf</h3>
+    <div class="third-span-column footer-links-column">
+      <h3>Explore</h3>
       <p><a href="../">Overview</a></p>
       <p><a href="https://apps.apple.com/app/id6771504450">App Store</a></p>
-      <p><a href="mailto:feedback@deadpan.io">Email</a></p>
+      <p><a href="../presskit">Press Kit</a></p>
+      <p><a href="mailto:feedback@deadpan.io">Support</a></p>
     </div>
-    <div class="third-span-column">
-      <h3>Privacy</h3>
-      <p>Leaf does not sell or rent your data.</p>
-      <p>Reading data stays off external servers.</p>
+    <div class="third-span-column footer-about-column">
+      <div class="footer-about-copy">
+        <h3>Leaf</h3>
+        <p>A reader and personal library for your EPUBs.</p>
+      </div>
+      <div class="theme-picker">
+        <span class="theme-picker-label">Appearance</span>
+        <div class="theme-picker-options" role="group" aria-label="Color scheme">
+          <button type="button" class="theme-picker-option" data-color-scheme="auto" aria-pressed="true">Auto</button>
+          <button type="button" class="theme-picker-option" data-color-scheme="light" aria-pressed="false">Light</button>
+          <button type="button" class="theme-picker-option" data-color-scheme="dark" aria-pressed="false">Dark</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<script src="../scripts/leaf.js?v=20260804a"></script>
 </body>
 </html>

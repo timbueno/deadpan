@@ -989,6 +989,12 @@ body.screenshot-lightbox-open {
   gap: 0.75rem;
 }
 
+.policy-update + .policy-update {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
 .policy-update-date {
   display: inline-flex;
   align-items: center;
@@ -1000,11 +1006,6 @@ body.screenshot-lightbox-open {
   font-size: 0.95rem;
   font-weight: 700;
   line-height: 1;
-}
-
-.privacy-back-link {
-  margin-top: 1.25rem;
-  text-align: center;
 }
 
 /* Press Kit
@@ -1021,38 +1022,30 @@ body.screenshot-lightbox-open {
 }
 
 .presskit-hero {
-  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--line);
 }
 
 .presskit-hero-row {
   align-items: center;
-  min-height: min(45rem, 72vh);
-  padding-top: 3rem;
-  padding-bottom: 4rem;
+  justify-content: center;
+  padding-top: 5rem;
+  padding-bottom: 5.5rem;
+  text-align: center;
 }
 
 .presskit-hero-copy {
-  flex: 0 1 38%;
-  position: relative;
-  z-index: 1;
+  width: 100%;
+  max-width: 46rem;
 }
 
-.presskit-hero-art {
-  flex: 0 1 62%;
-  min-width: 0;
-  transform: rotate(1.2deg);
-  filter: drop-shadow(0 2rem 2.2rem var(--shadow));
-}
-
-.presskit-hero-art img {
-  display: block;
-  width: 112%;
-  max-width: none;
-  height: auto;
+.presskit-hero-copy h1 {
+  margin-bottom: 1.25rem;
 }
 
 .presskit-intro {
-  max-width: 34rem;
+  max-width: 44rem;
+  margin-right: auto;
+  margin-left: auto;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   line-height: 1.5;
 }
@@ -1060,6 +1053,7 @@ body.screenshot-lightbox-open {
 .presskit-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.75rem;
   margin-top: 1.75rem;
 }
@@ -1075,7 +1069,6 @@ body.screenshot-lightbox-open {
   background: var(--accent-card);
   color: var(--ink);
   font-weight: 700;
-  box-shadow: 0 0.5rem 1.5rem var(--shadow);
 }
 
 .presskit-button-primary {
@@ -1177,6 +1170,7 @@ body.screenshot-lightbox-open {
 }
 
 .presskit-note-grid {
+  align-items: stretch;
   gap: 1rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -1282,11 +1276,18 @@ body.screenshot-lightbox-open {
   width: 100%;
 }
 
+.presskit-ipad-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
 .presskit-screenshot-preview {
   height: 31rem;
   display: grid;
-  place-items: end center;
-  padding: 1.5rem 1rem 0;
+  place-items: center;
+  padding: 1.5rem 1rem;
   background: var(--paper-hero);
 }
 
@@ -1296,12 +1297,20 @@ body.screenshot-lightbox-open {
   max-width: 14.5rem;
   height: 100%;
   object-fit: contain;
-  object-position: bottom center;
-  filter: drop-shadow(0 1.25rem 1.35rem var(--shadow));
+  object-position: center;
 }
 
 .presskit-screenshot-card .presskit-asset-meta {
-  min-height: 7.75rem;
+  min-height: 11rem;
+  flex-direction: column;
+}
+
+.presskit-screenshot-card .presskit-download-links {
+  align-items: flex-start;
+}
+
+.presskit-ipad-card .presskit-asset-preview {
+  height: 23rem;
 }
 
 .presskit-device-asset {
@@ -1330,7 +1339,6 @@ body.screenshot-lightbox-open {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 1rem 1.25rem var(--shadow));
 }
 
 /* Footer
@@ -1422,10 +1430,6 @@ body.screenshot-lightbox-open {
 @media only screen and (max-width: 960px) {
   html {
     font-size: 93.75%;
-  }
-
-  .presskit-hero-art img {
-    width: 122%;
   }
 
   .presskit-asset-grid {
@@ -1673,21 +1677,8 @@ body.screenshot-lightbox-open {
   }
 
   .presskit-hero-row {
-    min-height: 0;
-    flex-wrap: nowrap;
-    gap: 1rem;
-  }
-
-  .presskit-hero-copy {
-    flex-basis: 42%;
-  }
-
-  .presskit-hero-art {
-    flex-basis: 58%;
-  }
-
-  .presskit-hero-art img {
-    width: 135%;
+    padding-top: 4rem;
+    padding-bottom: 4.5rem;
   }
 
   .presskit-facts {
@@ -1711,24 +1702,8 @@ body.screenshot-lightbox-open {
 
 @media only screen and (max-width: 560px) {
   .presskit-hero-row {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-top: 2.25rem;
-  }
-
-  .presskit-hero-copy,
-  .presskit-hero-art {
-    flex-basis: auto;
-    width: 100%;
-  }
-
-  .presskit-hero-art {
-    margin-top: 1.25rem;
-  }
-
-  .presskit-hero-art img {
-    width: 110%;
-    margin-left: -5%;
+    padding-top: 3.25rem;
+    padding-bottom: 3.75rem;
   }
 
   .presskit-overview .row,
@@ -1741,7 +1716,8 @@ body.screenshot-lightbox-open {
 
   .presskit-feature-grid,
   .presskit-asset-grid,
-  .presskit-screenshot-grid {
+  .presskit-screenshot-grid,
+  .presskit-ipad-grid {
     grid-template-columns: 1fr;
   }
 
