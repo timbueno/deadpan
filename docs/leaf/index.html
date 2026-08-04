@@ -6,13 +6,21 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
   <title>Leaf — EPUB Reader &amp; Personal Library</title>
-  <meta name="description" content="Bring your EPUBs to Leaf. Read your way, organize books by shelf or series, and keep your library in sync across iPhone, iPad, and Mac.">
+  <meta name="description" content="Bring your EPUBs to Leaf. Read your way, organize books by shelf or series, and keep your library in sync across iPhone and iPad. Mac coming soon.">
   <meta name="author" content="Tim Bueno">
   <meta property="og:title" content="Leaf — Your books, well kept.">
-  <meta property="og:description" content="Read and organize your own EPUBs across iPhone, iPad, and Mac.">
+  <meta property="og:description" content="Read and organize your own EPUBs across iPhone and iPad. Mac coming soon.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://deadpan.io/leaf">
-  <meta property="og:image" content="https://deadpan.io/leaf/images/leaf-app-icon.png">
+  <meta property="og:url" content="https://deadpan.io/leaf/">
+  <meta property="og:image" content="https://deadpan.io/leaf/images/leaf-social-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Leaf on iPhone and iPad — Your books, well kept.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Leaf — Your books, well kept.">
+  <meta name="twitter:description" content="Read and organize your own EPUBs across iPhone and iPad. Mac coming soon.">
+  <meta name="twitter:image" content="https://deadpan.io/leaf/images/leaf-social-card.jpg">
+  <link rel="canonical" href="https://deadpan.io/leaf/">
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -29,24 +37,24 @@
     } catch {}
   </script>
   <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="./css/leaf.css?v=20260804d">
+  <link rel="stylesheet" href="./css/leaf.css?v=20260804k">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="apple-touch-icon" sizes="180x180" href="./images/leaf-app-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/leaf-app-icon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./images/leaf-app-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/leaf-app-icon-180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/leaf-app-icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/leaf-app-icon-16.png">
 
 </head>
 <body>
 
 <!-- Header Section -->
 
-<section class="header">
+<header class="header">
   <div class="row">
     <div class="header-brand-column">
       <a href="./" class="brand-lockup">
-        <img src="./images/leaf-app-icon.png" alt="Leaf app icon" class="brand-icon">
+        <img src="./images/leaf-app-icon-web.png" alt="Leaf app icon" class="brand-icon">
         <div class="brand-wordmark">
           <span class="brand-name">Leaf</span>
           <span class="brand-subtitle">EPUB reader and personal library</span>
@@ -62,7 +70,9 @@
       </a>
     </div>
   </div>
-</section>
+</header>
+
+<main>
 
 <!-- Hero Section -->
 
@@ -72,7 +82,7 @@
       <p class="eyebrow">Bring your own EPUBs</p>
       <h1>Your books, well kept.</h1>
       <p class="hero-body">
-        Read your EPUBs, arrange them by shelf or series, and keep your books and progress in sync with iCloud.
+        Read your EPUBs your way, organize them by shelf or series, and keep every book—and your place—in sync with iCloud.
       </p>
       <div class="hero-actions">
         <a href="https://apps.apple.com/app/id6771504450" class="hero-app-store-badge">
@@ -81,26 +91,26 @@
             <img src="./images/app-store-badge-dark.svg" alt="Download Leaf on the App Store">
           </picture>
         </a>
-        <p class="hero-footnote">For iPhone, iPad and coming soon to Mac</p>
+        <p class="hero-footnote">Available on iPhone and iPad. Mac coming soon.</p>
       </div>
     </div>
     <div class="hero-art-column">
       <div class="hero-composition">
         <picture class="hero-picture">
           <source
-            srcset="./images/web-hero-landscape-dark.png"
+            srcset="./images/web-hero-landscape-dark.webp"
             media="(max-width: 720px) and (prefers-color-scheme: dark)"
           >
           <source
-            srcset="./images/web-hero-landscape-light.png"
+            srcset="./images/web-hero-landscape-light.webp"
             media="(max-width: 720px)"
           >
           <source
-            srcset="./images/web-hero-portrait-dark.png"
+            srcset="./images/web-hero-portrait-dark.webp"
             media="(prefers-color-scheme: dark)"
           >
           <img
-            src="./images/web-hero-portrait-light.png"
+            src="./images/web-hero-portrait-light.webp"
             alt="Leaf library and reading views displayed on an iPad and iPhone"
             class="hero-image"
             decoding="async"
@@ -146,9 +156,9 @@
         aria-label="Enlarge screenshot of Reader Settings in Leaf"
       >
         <picture class="feature-screenshot-picture">
-          <source srcset="./images/web-iphone-1-dark.png" media="(prefers-color-scheme: dark)">
+          <source srcset="./images/iphone-web-1-dark.webp" media="(prefers-color-scheme: dark)">
           <img
-            src="./images/web-iphone-1-light.png"
+            src="./images/iphone-web-1-light.webp"
             alt=""
             class="feature-screenshot-visual"
             loading="lazy"
@@ -171,9 +181,9 @@
         aria-label="Enlarge screenshot of the Leaf shelves"
       >
         <picture class="feature-screenshot-picture">
-          <source srcset="./images/web-iphone-2-dark.png" media="(prefers-color-scheme: dark)">
+          <source srcset="./images/iphone-web-2-dark.webp" media="(prefers-color-scheme: dark)">
           <img
-            src="./images/web-iphone-2-light.png"
+            src="./images/iphone-web-2-light.webp"
             alt=""
             class="feature-screenshot-visual"
             loading="lazy"
@@ -196,9 +206,9 @@
         aria-label="Enlarge screenshot of Sources in Leaf"
       >
         <picture class="feature-screenshot-picture">
-          <source srcset="./images/web-iphone-3-dark.png" media="(prefers-color-scheme: dark)">
+          <source srcset="./images/iphone-web-3-dark.webp" media="(prefers-color-scheme: dark)">
           <img
-            src="./images/web-iphone-3-light.png"
+            src="./images/iphone-web-3-light.webp"
             alt=""
             class="feature-screenshot-visual"
             loading="lazy"
@@ -222,22 +232,22 @@
       >
         <span class="feature-screenshot-composition">
           <picture class="feature-screenshot-device feature-screenshot-device-phone">
-            <source srcset="./images/web-iphone-4-dark.png" media="(prefers-color-scheme: dark)">
+            <source srcset="./images/iphone-web-4-dark.webp" media="(prefers-color-scheme: dark)">
             <img
-              src="./images/web-iphone-4-light.png"
+              src="./images/iphone-web-4-light.webp"
               alt=""
               class="feature-screenshot-visual"
-              loading="eager"
+              loading="lazy"
               decoding="async"
             >
           </picture>
           <picture class="feature-screenshot-device feature-screenshot-device-palma">
-            <source srcset="./images/web-boox-palma-4-dark.png" media="(prefers-color-scheme: dark)">
+            <source srcset="./images/boox-palma-web-4-dark.webp" media="(prefers-color-scheme: dark)">
             <img
-              src="./images/web-boox-palma-4-light.png"
+              src="./images/boox-palma-web-4-light.webp"
               alt=""
               class="feature-screenshot-visual"
-              loading="eager"
+              loading="lazy"
               decoding="async"
             >
           </picture>
@@ -246,7 +256,7 @@
       <div class="feature">
         <p class="feature-kicker">Sync</p>
         <h3>Start here. Continue there.</h3>
-              <p>Keep your reading progress in sync with iCloud and KOReader sync server.</p>
+        <p>Sync progress with iCloud, and keep your place between Leaf and compatible e-ink readers with KOReader Sync.</p>
       </div>
     </article>
   </div>
@@ -276,7 +286,7 @@
       <div class="download-now-lozenge">
         <p class="eyebrow">On the App Store</p>
         <h2>Bring your library to Leaf.</h2>
-        <p class="section-note">For iPhone, iPad and coming soon to Mac</p>
+        <p class="section-note">Available on iPhone and iPad. Mac coming soon.</p>
         <a href="https://apps.apple.com/app/id6771504450">
           <picture>
             <source srcset="./images/app-store-badge-light.svg" media="(prefers-color-scheme: dark)">
@@ -288,9 +298,11 @@
   </div>
 </section>
 
+</main>
+
 <!-- Footer Section -->
 
-<section class="footer">
+<footer class="footer">
   <div class="row">
     <div class="third-span-column footer-brand-column">
       <a href="../">
@@ -321,7 +333,7 @@
       </div>
     </div>
   </div>
-</section>
+</footer>
 
 <script src="./scripts/leaf.js?v=20260804a"></script>
 </body>

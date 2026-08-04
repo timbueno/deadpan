@@ -6,13 +6,21 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
   <title>Leaf Privacy Policy</title>
-  <meta name="description" content="Privacy Policy for Leaf, the EPUB reader and library manager for iPhone, iPad, and Mac.">
-  <meta name="author" content="">
+  <meta name="description" content="Privacy Policy for Leaf, the EPUB reader and library manager for iPhone and iPad. Mac coming soon.">
+  <meta name="author" content="Tim Bueno">
   <meta property="og:title" content="Leaf Privacy Policy">
   <meta property="og:description" content="Learn how Leaf handles analytics and reading data.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://deadpan.io/leaf/privacypolicy">
-  <meta property="og:image" content="https://deadpan.io/leaf/images/leaf-app-icon.png">
+  <meta property="og:url" content="https://deadpan.io/leaf/privacypolicy/">
+  <meta property="og:image" content="https://deadpan.io/leaf/images/leaf-social-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Leaf on iPhone and iPad — Your books, well kept.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Leaf Privacy Policy">
+  <meta name="twitter:description" content="Learn how Leaf handles analytics and reading data.">
+  <meta name="twitter:image" content="https://deadpan.io/leaf/images/leaf-social-card.jpg">
+  <link rel="canonical" href="https://deadpan.io/leaf/privacypolicy/">
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -29,22 +37,22 @@
     } catch {}
   </script>
   <link rel="stylesheet" href="../../css/normalize.css">
-  <link rel="stylesheet" href="../css/leaf.css?v=20260804i">
+  <link rel="stylesheet" href="../css/leaf.css?v=20260804k">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="apple-touch-icon" sizes="180x180" href="../images/leaf-app-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../images/leaf-app-icon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../images/leaf-app-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/leaf-app-icon-180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/leaf-app-icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/leaf-app-icon-16.png">
 
 </head>
 <body class="privacy-page">
 
-<section class="header">
+<header class="header">
   <div class="row">
     <div class="header-brand-column">
       <a href="../" class="brand-lockup">
-        <img src="../images/leaf-app-icon.png" alt="Leaf app icon" class="brand-icon">
+        <img src="../images/leaf-app-icon-web.png" alt="Leaf app icon" class="brand-icon">
         <div class="brand-wordmark">
           <span class="brand-name">Leaf</span>
           <span class="brand-subtitle">EPUB reader and personal library</span>
@@ -52,7 +60,9 @@
       </a>
     </div>
   </div>
-</section>
+</header>
+
+<main>
 
 <section class="privacy-hero">
   <div class="row narrow-row">
@@ -70,6 +80,16 @@
   <div class="row narrow-row">
     <div class="full-span-column">
       <div class="privacy-card">
+        <div class="privacy-summary" aria-labelledby="privacy-summary-title">
+          <p class="eyebrow">The short version</p>
+          <h2 id="privacy-summary-title">Your books stay yours.</h2>
+          <ul>
+            <li>Leaf never sends book files or book text to analytics services.</li>
+            <li>Book titles and author names stay out of analytics.</li>
+            <li>You can turn off analytics at any time in Settings.</li>
+          </ul>
+          <p class="privacy-updated">Last updated July 22, 2026</p>
+        </div>
         <div class="privacy-copy">
           <p>Leaf takes your privacy very seriously.</p>
           <p>
@@ -108,8 +128,8 @@
             You can disable this collection at any time using the Share
             Analytics toggle in Settings. Turning it off stops future analytics collection; locally
             stored identifiers may remain so Leaf can reuse them if analytics is enabled again. You
-            can find PostHog's
-            privacy policy <a href="https://posthog.com/privacy">here</a>.
+            can read <a href="https://posthog.com/privacy">PostHog's privacy policy</a> for more
+            information about its practices.
           </p>
           <p>
             If you have opted into allowing Apple to share information with developers, we receive
@@ -119,6 +139,9 @@
             Leaf does not sell or rent your data. The analytics information collected is used only to
             improve the app. Leaf does not send book files, book text, or descriptive library fields
             such as titles and author names to analytics services.
+          </p>
+          <p class="privacy-contact">
+            Questions about privacy? Email <a href="mailto:feedback@deadpan.io">feedback@deadpan.io</a>.
           </p>
         </div>
 
@@ -143,7 +166,9 @@
   </div>
 </section>
 
-<section class="footer">
+</main>
+
+<footer class="footer">
   <div class="row">
     <div class="third-span-column footer-brand-column">
       <a href="../../">
@@ -174,7 +199,7 @@
       </div>
     </div>
   </div>
-</section>
+</footer>
 
 <script src="../scripts/leaf.js?v=20260804a"></script>
 </body>

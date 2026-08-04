@@ -95,7 +95,9 @@ body {
   width: 100%;
 }
 
-section {
+section,
+header.header,
+footer.footer {
   padding: 0 2rem;
 }
 
@@ -960,8 +962,45 @@ body.screenshot-lightbox-open {
   padding: 2rem;
   border: 1px solid var(--line);
   border-radius: 2rem;
-  background: rgba(255, 251, 245, 0.82);
+  background: var(--accent-card);
   box-shadow: 0 20px 45px var(--shadow);
+}
+
+.privacy-summary {
+  margin-bottom: 2.25rem;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(circle at top right, rgba(176, 112, 64, 0.08), transparent 42%),
+    var(--paper);
+}
+
+.privacy-summary h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+}
+
+.privacy-summary ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.privacy-summary li {
+  padding-left: 0.25rem;
+  color: var(--ink);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.privacy-summary li + li {
+  margin-top: 0.35rem;
+}
+
+.privacy-updated {
+  margin-top: 1.1rem;
+  color: var(--muted-ink);
+  font-size: 0.9rem;
 }
 
 .privacy-copy {
@@ -971,6 +1010,11 @@ body.screenshot-lightbox-open {
 
 .privacy-copy p + p {
   margin-top: 0;
+}
+
+.privacy-contact {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
 }
 
 .privacy-updates {
@@ -1446,7 +1490,9 @@ body.screenshot-lightbox-open {
 }
 
 @media only screen and (max-width: 744px) {
-  section {
+  section,
+  header.header,
+  footer.footer {
     padding: 0 1.25rem;
   }
 
