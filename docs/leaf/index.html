@@ -5,11 +5,11 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Leaf</title>
-  <meta name="description" content="Leaf is an EPUB reader and library manager for iPhone, iPad, and Mac. Import your books, organize your library, and pick up where you left off.">
-  <meta name="author" content="">
-  <meta property="og:title" content="Leaf">
-  <meta property="og:description" content="Import EPUBs, organize your library, and keep your place across iPhone, iPad, and Mac.">
+  <title>Leaf — EPUB Reader &amp; Personal Library</title>
+  <meta name="description" content="Bring your EPUBs to Leaf. Read your way, organize books by shelf or series, and keep your library in sync across iPhone, iPad, and Mac.">
+  <meta name="author" content="Tim Bueno">
+  <meta property="og:title" content="Leaf — Your books, well kept.">
+  <meta property="og:description" content="Read and organize your own EPUBs across iPhone, iPad, and Mac.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://deadpan.io/leaf">
   <meta property="og:image" content="https://deadpan.io/leaf/images/leaf-app-icon.png">
@@ -20,8 +20,16 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("leaf-color-scheme");
+      if (savedTheme === "light" || savedTheme === "dark") {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    } catch {}
+  </script>
   <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="./css/leaf.css?v=20260726w">
+  <link rel="stylesheet" href="./css/leaf.css?v=20260804d">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -41,7 +49,7 @@
         <img src="./images/leaf-app-icon.png" alt="Leaf app icon" class="brand-icon">
         <div class="brand-wordmark">
           <span class="brand-name">Leaf</span>
-          <span class="brand-subtitle">EPUB reader and library manager</span>
+          <span class="brand-subtitle">EPUB reader and personal library</span>
         </div>
       </a>
     </div>
@@ -49,7 +57,7 @@
       <a href="https://apps.apple.com/app/id6771504450">
         <picture>
           <source srcset="./images/app-store-badge-light.svg" media="(prefers-color-scheme: dark)">
-          <img src="./images/app-store-badge-dark.svg" alt="Apple App Store Download Badge">
+          <img src="./images/app-store-badge-dark.svg" alt="Download Leaf on the App Store">
         </picture>
       </a>
     </div>
@@ -61,34 +69,42 @@
 <section class="hero">
   <div class="row hero-row">
     <div class="hero-copy-column">
-      <p class="eyebrow">EPUB reader and library manager</p>
-      <h1>A better place to keep your books.</h1>
+      <p class="eyebrow">Bring your own EPUBs</p>
+      <h1>Your books, well kept.</h1>
       <p class="hero-body">
-        Leaf brings reading and library management together in one warm, shelf-minded app for iPhone,
-        iPad, and Mac. Import your EPUBs, organize them with shelves and series, browse OPDS catalogs,
-        and pick up exactly where you left off on your next device.
+        Read your EPUBs, arrange them by shelf or series, and keep your books and progress in sync with iCloud.
       </p>
       <div class="hero-actions">
         <a href="https://apps.apple.com/app/id6771504450" class="hero-app-store-badge">
           <picture>
             <source srcset="./images/app-store-badge-light.svg" media="(prefers-color-scheme: dark)">
-            <img src="./images/app-store-badge-dark.svg" alt="Apple App Store Download Badge">
+            <img src="./images/app-store-badge-dark.svg" alt="Download Leaf on the App Store">
           </picture>
         </a>
-        <p class="hero-footnote">Available for iPhone, iPad, and Mac.</p>
+        <p class="hero-footnote">For iPhone, iPad and coming soon to Mac</p>
       </div>
     </div>
     <div class="hero-art-column">
       <div class="hero-composition">
         <picture class="hero-picture">
           <source
-            srcset="./images/leaf-hero-devices.png?v=20260726b"
+            srcset="./images/hero-landscape-dark.png?v=20260728d"
+            media="(max-width: 720px) and (prefers-color-scheme: dark)"
+          >
+          <source
+            srcset="./images/hero-landscape-light.png?v=20260728d"
             media="(max-width: 720px)"
           >
+          <source
+            srcset="./images/hero-portrait-dark.png?v=20260728d"
+            media="(prefers-color-scheme: dark)"
+          >
           <img
-            src="./images/leaf-hero-devices-vertical.png?v=20260726b"
+            src="./images/hero-portrait-light.png?v=20260728d"
             alt="Leaf library and reading views displayed on an iPad and iPhone"
             class="hero-image"
+            decoding="async"
+            fetchpriority="high"
           >
         </picture>
       </div>
@@ -101,11 +117,9 @@
 <section class="tagline">
   <div class="row narrow-row">
     <div class="full-span-column">
-      <h2>Built for people who collect, sort, and actually read.</h2>
+      <h2>There’s more on your shelves.</h2>
       <p>
-        Some reading apps feel like file managers. Some library apps forget that books are meant to be opened.
-        Leaf sits in the middle: a thoughtful place to keep your library in order without making the act of reading
-        feel clinical.
+        Leaf brings unfinished books, old favorites, and forgotten reads back into view.
       </p>
     </div>
   </div>
@@ -117,11 +131,8 @@
   <div class="row">
     <div class="full-span-column">
       <div class="features-heading">
-        <p class="eyebrow">What Leaf does well</p>
-        <h2><span>Features</span></h2>
-        <p class="section-note">
-          Four essentials for people who want their reading app to feel as considered as the books inside it.
-        </p>
+        <p class="eyebrow">Inside Leaf</p>
+        <h2><span>From shelf to last page.</span></h2>
       </div>
     </div>
   </div>
@@ -131,19 +142,24 @@
       <button
         type="button"
         class="feature-screenshot"
-        data-screenshot-title="Leaf reader"
-        aria-label="Enlarge the Leaf reader screenshot"
+        data-screenshot-title="Reader settings in Leaf"
+        aria-label="Enlarge screenshot of Reader Settings in Leaf"
       >
-        <img
-          src="./images/leaf-feature-sage.png"
-          alt=""
-          class="feature-screenshot-visual"
-        >
+        <picture class="feature-screenshot-picture">
+          <source srcset="./images/iphone-web-1-dark.png?v=20260728d" media="(prefers-color-scheme: dark)">
+          <img
+            src="./images/iphone-web-1-light.png?v=20260728d"
+            alt=""
+            class="feature-screenshot-visual"
+            loading="lazy"
+            decoding="async"
+          >
+        </picture>
       </button>
       <div class="feature">
         <p class="feature-kicker">Read</p>
-        <h3>A reader that gets out of the way</h3>
-        <p>Read EPUBs in a focused reader that remembers exactly where you left off.</p>
+        <h3>Make the page your own</h3>
+        <p>Choose fonts, themes, spacing, and margins—globally or book by book.</p>
       </div>
     </article>
 
@@ -151,19 +167,24 @@
       <button
         type="button"
         class="feature-screenshot"
-        data-screenshot-title="Leaf library organization"
-        aria-label="Enlarge the Leaf library organization screenshot"
+        data-screenshot-title="Organizing books in Leaf"
+        aria-label="Enlarge screenshot of the Leaf shelves"
       >
-        <img
-          src="./images/leaf-feature-sage.png"
-          alt=""
-          class="feature-screenshot-visual"
-        >
+        <picture class="feature-screenshot-picture">
+          <source srcset="./images/iphone-web-2-dark.png?v=20260728d" media="(prefers-color-scheme: dark)">
+          <img
+            src="./images/iphone-web-2-light.png?v=20260728d"
+            alt=""
+            class="feature-screenshot-visual"
+            loading="lazy"
+            decoding="async"
+          >
+        </picture>
       </button>
       <div class="feature">
         <p class="feature-kicker">Organize</p>
-        <h3>A library arranged like one</h3>
-        <p>Build shelves, track series, rate favorites, and see what is unread, underway, or finished.</p>
+        <h3>Everything in its place</h3>
+        <p>Build shelves, track series, rate books, and sort by reading status.</p>
       </div>
     </article>
 
@@ -171,39 +192,61 @@
       <button
         type="button"
         class="feature-screenshot"
-        data-screenshot-title="Leaf catalog browsing"
-        aria-label="Enlarge the Leaf catalog browsing screenshot"
+        data-screenshot-title="Browsing Sources in Leaf"
+        aria-label="Enlarge screenshot of Sources in Leaf"
       >
-        <img
-          src="./images/leaf-feature-sage.png"
-          alt=""
-          class="feature-screenshot-visual"
-        >
+        <picture class="feature-screenshot-picture">
+          <source srcset="./images/iphone-web-3-dark.png?v=20260728d" media="(prefers-color-scheme: dark)">
+          <img
+            src="./images/iphone-web-3-light.png?v=20260728d"
+            alt=""
+            class="feature-screenshot-visual"
+            loading="lazy"
+            decoding="async"
+          >
+        </picture>
       </button>
       <div class="feature">
-        <p class="feature-kicker">Discover</p>
-        <h3>Catalogs made for wandering</h3>
-        <p>Browse OPDS catalogs and bring new finds straight into your library.</p>
+        <p class="feature-kicker">Sources</p>
+        <h3>Browse the Sources you choose</h3>
+        <p>Import EPUBs from Files, or browse OPDS Sources and add books directly to Leaf.</p>
       </div>
     </article>
 
     <article class="feature-gallery-card">
       <button
         type="button"
-        class="feature-screenshot"
-        data-screenshot-title="Leaf iCloud sync"
-        aria-label="Enlarge the Leaf iCloud sync screenshot"
+        class="feature-screenshot feature-screenshot-pair"
+        data-screenshot-title="Reading with Leaf across devices"
+        aria-label="Enlarge screenshot of Leaf reading views on two devices"
       >
-        <img
-          src="./images/leaf-feature-sage.png"
-          alt=""
-          class="feature-screenshot-visual"
-        >
+        <span class="feature-screenshot-composition">
+          <picture class="feature-screenshot-device feature-screenshot-device-phone">
+            <source srcset="./images/iphone-web-4-dark.png?v=20260728d" media="(prefers-color-scheme: dark)">
+            <img
+              src="./images/iphone-web-4-light.png?v=20260728d"
+              alt=""
+              class="feature-screenshot-visual"
+              loading="eager"
+              decoding="async"
+            >
+          </picture>
+          <picture class="feature-screenshot-device feature-screenshot-device-palma">
+            <source srcset="./images/boox-palma-web-4-dark.png?v=20260728d" media="(prefers-color-scheme: dark)">
+            <img
+              src="./images/boox-palma-web-4-light.png?v=20260728d"
+              alt=""
+              class="feature-screenshot-visual"
+              loading="eager"
+              decoding="async"
+            >
+          </picture>
+        </span>
       </button>
       <div class="feature">
         <p class="feature-kicker">Sync</p>
-        <h3>Your place, everywhere</h3>
-        <p>Keep books and reading progress together across iPhone, iPad, and Mac with iCloud.</p>
+        <h3>Start here. Continue there.</h3>
+              <p>Keep your reading progress in sync with iCloud and KOReader sync server.</p>
       </div>
     </article>
   </div>
@@ -214,11 +257,11 @@
   id="screenshot-lightbox"
   role="dialog"
   aria-modal="true"
-  aria-label="Enlarged Leaf screenshot"
+  aria-label="Enlarged app screenshot"
   hidden
 >
   <div class="screenshot-lightbox-shell">
-    <button type="button" class="screenshot-lightbox-close" aria-label="Close enlarged screenshot">
+    <button type="button" class="screenshot-lightbox-close" aria-label="Close screenshot">
       <span aria-hidden="true">×</span>
     </button>
     <div class="screenshot-lightbox-media"></div>
@@ -231,13 +274,13 @@
   <div class="row narrow-row">
     <div class="full-span-column">
       <div class="download-now-lozenge">
-        <p class="eyebrow">Available now</p>
-        <h2>Bring your library somewhere you will want to open every day.</h2>
-        <p class="section-note">Leaf is available on the App Store for iPhone, iPad, and Mac.</p>
+        <p class="eyebrow">On the App Store</p>
+        <h2>Bring your library to Leaf.</h2>
+        <p class="section-note">For iPhone, iPad and coming soon to Mac</p>
         <a href="https://apps.apple.com/app/id6771504450">
           <picture>
             <source srcset="./images/app-store-badge-light.svg" media="(prefers-color-scheme: dark)">
-            <img src="./images/app-store-badge-dark.svg" alt="Apple App Store Download Badge" class="centered-image">
+            <img src="./images/app-store-badge-dark.svg" alt="Download Leaf on the App Store" class="centered-image">
           </picture>
         </a>
       </div>
@@ -249,27 +292,37 @@
 
 <section class="footer">
   <div class="row">
-    <div class="third-span-column">
+    <div class="third-span-column footer-brand-column">
       <a href="../">
         <img src="./images/deadpan-circle-type.svg" alt="Deadpan Logo" class="deadpan-logo centered-image">
       </a>
       <p>Made by Tim Bueno in NYC</p>
       <p class="copyright">© 2026 Deadpan</p>
     </div>
-    <div class="third-span-column">
+    <div class="third-span-column footer-links-column">
       <h3>Leaf</h3>
       <p><a href="https://apps.apple.com/app/id6771504450">App Store</a></p>
+      <p><a href="./presskit">Press Kit</a></p>
       <p><a href="./privacypolicy">Privacy Policy</a></p>
-      <p><a href="mailto:feedback@deadpan.io">Email</a></p>
+      <p><a href="mailto:feedback@deadpan.io">Support</a></p>
     </div>
-    <div class="third-span-column">
-      <h3>Why Leaf</h3>
-      <p>Bring your own EPUBs and keep them organized.</p>
-      <p>Read, sort, and discover from one calm place.</p>
+    <div class="third-span-column footer-about-column">
+      <div class="footer-about-copy">
+        <h3>About Leaf</h3>
+        <p>A reader and personal library for your EPUBs.</p>
+      </div>
+      <div class="theme-picker">
+        <span class="theme-picker-label">Appearance</span>
+        <div class="theme-picker-options" role="group" aria-label="Color scheme">
+          <button type="button" class="theme-picker-option" data-color-scheme="auto" aria-pressed="true">Auto</button>
+          <button type="button" class="theme-picker-option" data-color-scheme="light" aria-pressed="false">Light</button>
+          <button type="button" class="theme-picker-option" data-color-scheme="dark" aria-pressed="false">Dark</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<script src="./scripts/leaf.js?v=20260726q"></script>
+<script src="./scripts/leaf.js?v=20260804a"></script>
 </body>
 </html>
