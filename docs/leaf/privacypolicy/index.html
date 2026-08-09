@@ -80,73 +80,223 @@
   <div class="row narrow-row">
     <div class="full-span-column">
       <div class="privacy-card">
-        <div class="privacy-summary" aria-labelledby="privacy-summary-title">
+        <section class="privacy-summary" aria-labelledby="privacy-summary-title">
           <p class="eyebrow">The short version</p>
           <h2 id="privacy-summary-title">Your books stay yours.</h2>
           <ul>
+            <li>App usage analytics are optional and off by default.</li>
+            <li>Leaf does not sell or rent personal information, show advertising, or track you across other companies' apps or websites.</li>
             <li>Leaf never sends book files or book text to analytics services.</li>
-            <li>Book titles and author names stay out of analytics.</li>
-            <li>You can turn off analytics at any time in Settings.</li>
+            <li>Information is sent to iCloud, Sources, or KOReader servers only when needed for features you choose.</li>
           </ul>
-          <p class="privacy-updated">Last updated July 22, 2026</p>
-        </div>
+          <p class="privacy-updated">Last updated August 7, 2026</p>
+        </section>
         <div class="privacy-copy">
-          <p>Leaf takes your privacy very seriously.</p>
           <p>
-            Leaf uses PostHog to collect limited app usage analytics, such as feature usage,
-            aggregate reading activity, and basic app and device information. Events may include
-            a pseudonymous Leaf analytics identifier and a source label indicating whether it came
-            from iCloud or this app installation.
+            Leaf is operated by Deadpan, LLC (“Deadpan,” “we,” or “us”). This policy explains how
+            Leaf handles information when you use the app. Questions and privacy requests can be
+            sent to <a href="mailto:privacy@deadpan.io">privacy@deadpan.io</a>.
+          </p>
+
+          <h2>Information stored by Leaf</h2>
+          <p>
+            Leaf stores your books, library database, covers, reading progress and sessions,
+            shelves, ratings, reviews, reading status, reader preferences, Sources, and other app
+            settings on your device. This information remains there until you delete it in Leaf,
+            remove the app's data, or use a system storage control. Authentication credentials are
+            stored in Apple's Keychain rather than in Leaf's library database.
+          </p>
+
+          <h2>iCloud Sync</h2>
+          <p>
+            iCloud Sync is enabled by default when iCloud is available. When it is enabled, Leaf uses
+            Apple's iCloud Drive and the app's private CloudKit database to make your library
+            available on your devices. Synced information includes book files and covers; book
+            metadata such as titles, authors, descriptions, language, publication information,
+            series, and genres; reading progress and sessions, including the device name recorded
+            for a session; shelves, ratings, reviews, and reading status; reader color themes; Source
+            names, types, and server URLs; and the configured KOReader server URL and username.
           </p>
           <p>
-            When iCloud Sync is enabled and Leaf can validate
-            the current iCloud account, Leaf deterministically derives the identifier from Leaf's
-            app-specific CloudKit user record so events from devices using that account can be
-            associated. Leaf never stores or sends the raw CloudKit record identifier. Leaf stores
-            the derived identifier locally with Apple's opaque iCloud account token so it can reuse
-            a cached identifier only for the matching account; that token is never sent to PostHog.
+            Source credentials and tokens are stored in Keychain and may sync between your devices
+            through iCloud Keychain. A KOReader password is not stored after setup. Leaf stores a
+            derived KOReader authentication key in Keychain on the device where it was entered; that
+            key is not synced by Leaf through CloudKit.
           </p>
           <p>
-            During a temporary CloudKit failure, Leaf reuses only a cached identifier validated for
-            that account; without one, events omit Leaf's identity fields until CloudKit resolves.
-            When iCloud Sync is off or CloudKit reports no authenticated account, Leaf uses a random
-            identifier stored locally in the app's preferences. PostHog also uses its own randomly
-            generated app-installation identifier to process analytics events. Leaf does not use
-            advertising or hardware identifiers.
+            Apple processes iCloud and Keychain information under
+            <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. Synced
+            information remains in iCloud until you delete the corresponding data or use Leaf's
+            iCloud removal option. Turning off iCloud Sync and choosing to keep data in iCloud does
+            not delete the iCloud copy. Choosing to remove Leaf data from iCloud deletes Leaf's
+            synced CloudKit records and moves available book files to local storage. Source
+            credentials stored in iCloud Keychain must be removed by deleting the corresponding
+            Source or by using Apple's Keychain and iCloud controls.
+          </p>
+
+          <h2>Sources and user-selected servers</h2>
+          <p>
+            Sources are places you configure Leaf to browse or import books from. Leaf connects
+            directly from your device to each Source; those requests do not pass through Deadpan.
+            Depending on the Source and what you do, the server may receive your IP address, Source
+            credentials or access tokens, search terms, feed requests, book and cover requests, and
+            download activity. The server operator may retain request logs and other information
+            under its own privacy policy. Deadpan does not control user-selected servers. Use HTTPS
+            Sources when possible because an HTTP server does not provide transport encryption.
+          </p>
+
+          <h2>KOReader Sync</h2>
+          <p>
+            KOReader Sync is optional and connects directly to the server URL you choose. When you
+            create a KOReader account, Leaf sends the username and password you enter to that server.
+            For later authentication and synchronization, Leaf sends the username and a derived
+            authentication key. A progress update includes a document-matching hash derived from the
+            book file or filename, the reading position, completion percentage, and the device label
+            “Leaf.” Leaf does not send the book file or book text to the KOReader server.
           </p>
           <p>
-            Book-related events include an opaque library book
-            identifier so activity for the same synced book can be associated across devices. They
-            may also include structural metadata already stored by Leaf, such as file size, position
-            count, language, publication year, whether basic metadata or a cover is present, and the
-            total number of books in the library after an import or deletion. Analytics events do not
-            include book titles, author names, Source names, file paths, filenames, file hashes,
-            source URLs, iCloud account names, or email addresses. They also do not include a book's
-            exact reading location.
+            Clearing KOReader settings in Leaf removes the saved configuration and local
+            authentication key, but it does not delete the KOReader account or progress already held
+            by the selected server. Contact that server's operator to access or delete server-side
+            KOReader information. The server operator controls its own security, retention, and
+            deletion practices.
+          </p>
+
+          <h2>Optional app analytics</h2>
+          <p>
+            App usage analytics are optional and off by default. Leaf does not configure or send data
+            to PostHog unless you choose Share Analytics. You can change that choice at any time in
+            Settings.
           </p>
           <p>
-            You can disable this collection at any time using the Share
-            Analytics toggle in Settings. Turning it off stops future analytics collection; locally
-            stored identifiers may remain so Leaf can reuse them if analytics is enabled again. You
-            can read <a href="https://posthog.com/privacy">PostHog's privacy policy</a> for more
-            information about its practices.
+            If enabled, Leaf uses PostHog's United States-hosted service to collect product
+            interaction and other usage data for the sole purpose of understanding and improving
+            Leaf. Events can include app launches; screens and features used; imports, downloads,
+            sharing, shelves, iCloud settings, and reading activity; aggregate values such as library
+            size, session duration, pages read, and completion percentage; app version, operating
+            system, and basic device information; a randomly generated PostHog app-installation
+            identifier; and a pseudonymous Leaf analytics identifier with a source label indicating
+            whether it came from iCloud or this app installation.
           </p>
           <p>
-            If you have opted into allowing Apple to share information with developers, we receive
-            some anonymous analytics from Apple.
+            PostHog maintains a minimal pseudonymous person record keyed by the PostHog installation
+            identifier so matching event history can be deleted when requested. Leaf does not add a
+            name, email address, or other contact field to that record and does not use it to merge
+            activity across different installations.
           </p>
           <p>
-            Leaf does not sell or rent your data. The analytics information collected is used only to
-            improve the app. Leaf does not send book files, book text, or descriptive library fields
-            such as titles and author names to analytics services.
+            When iCloud Sync is enabled and Leaf can validate the current iCloud account, Leaf
+            deterministically derives its analytics identifier from Leaf's app-specific CloudKit user
+            record so activity from devices using that account can be associated. Leaf never stores
+            or sends the raw CloudKit record identifier. It stores the derived identifier locally
+            with Apple's opaque iCloud account token so a cached identifier is used only for the
+            matching account; the token is never sent to PostHog. During a temporary CloudKit failure,
+            Leaf uses only a cached identifier validated for that account. Without one, events omit
+            Leaf's identity fields until CloudKit resolves. When iCloud Sync is off or CloudKit
+            reports no authenticated account, Leaf uses a random identifier stored in the app's
+            preferences.
+          </p>
+          <p>
+            Book-related analytics may include an opaque library book identifier, file size, position
+            count, language, publication year, whether basic metadata or a cover is present, reading
+            status, approximate completion percentage, and the number of books in the library after
+            an import or deletion. Analytics do not include book files, book text, titles, author
+            names, descriptions, Source names, Source URLs, filenames, file paths, file hashes,
+            iCloud account names, email addresses, or an exact reading location.
+          </p>
+          <p>
+            Leaf disables PostHog session replay, surveys, automatic element interaction capture,
+            automatic screen capture, error auto-capture, advertising features, and GeoIP enrichment.
+            Leaf does not use the advertising identifier or other hardware advertising identifiers.
+            Analytics information is linked to pseudonymous account- or installation-level
+            identifiers so events can be analyzed together, but it is not used to track you across
+            other companies' apps, websites, or offline properties.
+          </p>
+
+          <h2>Retention and deletion</h2>
+          <p>
+            Analytics remains in PostHog until it is deleted under the retention settings and service
+            limits applicable to Leaf's project or in response to a verified deletion request.
+            Deadpan may delete analytics sooner when it is no longer needed to understand and improve
+            Leaf. Leaf retains the pseudonymous identifiers needed to locate analytics for a deletion
+            request on your device while they remain relevant to the current analytics project or
+            until you remove the app's data. Turning off Share Analytics stops future collection but
+            does not automatically delete analytics already received.
+          </p>
+          <p>
+            To request deletion of previously collected analytics, use <strong>Stop Sharing &amp;
+            Request Deletion</strong> in Leaf's Privacy Policy screen or email
+            <a href="mailto:privacy@deadpan.io">privacy@deadpan.io</a>. The in-app action first turns
+            off analytics sharing on that device, then sends the locally retained pseudonymous
+            identifiers to Deadpan's deletion service. The service asks PostHog to delete matching
+            person records, events, and recordings, while Leaf stores an opaque status receipt on the
+            device. Leaf checks that receipt when you open the Privacy Policy screen again.
+            Cloudflare processes network metadata such as the request's IP address to route and
+            rate-limit these requests. Deadpan's deletion service is stateless and does not store
+            request bodies or identifiers in a database.
+          </p>
+          <p>
+            PostHog normally begins its weekly analytics-event deletion batch around 5:00 a.m. UTC
+            every Sunday. Processing may continue after the batch starts. Only events captured before
+            the deletion request are included. Leaf shows when PostHog reports completion and provides
+            an email fallback if a request requires manual review. Deadpan will respond to a verified
+            privacy request within 30 days. Privacy-request correspondence may be retained for up to
+            24 months to document the request and response, unless a longer period is required by law.
+          </p>
+          <p>
+            You can read <a href="https://posthog.com/privacy">PostHog's Privacy Policy</a> for more
+            information about its processing practices.
+          </p>
+
+          <h2>Apple analytics and purchases</h2>
+          <p>
+            If you separately choose to share analytics with app developers through Apple's system
+            settings, Deadpan may receive aggregated or anonymous App Analytics from Apple. Apple
+            controls that collection and choice.
+          </p>
+          <p>
+            Leaf Pro subscriptions are purchased and managed through StoreKit and the App Store.
+            Apple handles payment credentials, billing, renewal, cancellation, refunds, taxes, and
+            the association with your Apple Account. Leaf receives entitlement and transaction status
+            on the device so it can unlock Leaf Pro. Leaf does not operate a payment server or receive
+            your full payment information.
+          </p>
+
+          <h2>Sharing and protection</h2>
+          <p>
+            Leaf does not sell or rent your information. Deadpan shares information only as needed to
+            provide a feature you choose, comply with law, protect rights and security, or work with
+            service providers such as Apple, Cloudflare, and PostHog. Service providers processing
+            information on Deadpan's behalf are required to protect it consistently with this policy
+            and applicable law. User-selected Source and KOReader server operators are independent
+            services selected by you and are governed by their own terms and privacy policies.
+          </p>
+
+          <h2>Children</h2>
+          <p>
+            Leaf is not directed to children under 13, and Deadpan does not knowingly collect
+            personal information from children. If you believe a child has provided information to
+            Deadpan, contact <a href="mailto:privacy@deadpan.io">privacy@deadpan.io</a>.
+          </p>
+
+          <h2>Changes and contact</h2>
+          <p>
+            Deadpan may update this policy as Leaf changes. The current version is always available
+            at <a href="https://deadpan.io/leaf/privacypolicy/">deadpan.io/leaf/privacypolicy</a>, and
+            material changes will be identified by the date above.
           </p>
           <p class="privacy-contact">
-            Questions about privacy? Email <a href="mailto:feedback@deadpan.io">feedback@deadpan.io</a>.
+            For questions, access requests, correction requests, or deletion requests, email
+            <a href="mailto:privacy@deadpan.io">privacy@deadpan.io</a>.
           </p>
         </div>
 
         <div class="privacy-updates">
           <h2>Changes to this policy</h2>
+          <div class="policy-update">
+            <p class="policy-update-date">August 7, 2026</p>
+            <p>Added analytics retention and reliable deletion requests that stop future collection, iCloud and Keychain storage details, and disclosures for Sources and KOReader servers. Clarified that linked analytics remain optional, off by default, and are not used for tracking.</p>
+          </div>
           <div class="policy-update">
             <p class="policy-update-date">July 22, 2026</p>
             <p>Clarified the iCloud and installation sources of pseudonymous analytics identifiers, local account-scoped caching, and when identity fields may be omitted.</p>
