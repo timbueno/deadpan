@@ -1008,8 +1008,13 @@ body.screenshot-lightbox-open {
   gap: 1rem;
 }
 
-.privacy-copy p + p {
-  margin-top: 0;
+.privacy-copy h2 {
+  margin: 1.25rem 0 0;
+  font-size: 1.45rem;
+}
+
+.privacy-copy p {
+  margin: 0;
 }
 
 .privacy-contact {
