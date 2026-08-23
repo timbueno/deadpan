@@ -89,7 +89,7 @@
             <li>Leaf never sends book files or book text to analytics services.</li>
             <li>Information is sent to iCloud, Sources, or KOReader servers only when needed for features you choose.</li>
           </ul>
-          <p class="privacy-updated">Last updated August 7, 2026</p>
+          <p class="privacy-updated">Last updated August 9, 2026</p>
         </section>
         <div class="privacy-copy">
           <p>
@@ -118,10 +118,9 @@
             names, types, and server URLs; and the configured KOReader server URL and username.
           </p>
           <p>
-            Source credentials and tokens are stored in Keychain and may sync between your devices
-            through iCloud Keychain. A KOReader password is not stored after setup. Leaf stores a
-            derived KOReader authentication key in Keychain on the device where it was entered; that
-            key is not synced by Leaf through CloudKit.
+            Source credentials and tokens, and the derived KOReader authentication key, are stored
+            in Keychain and may sync between your devices through iCloud Keychain. A KOReader
+            password is not stored after setup.
           </p>
           <p>
             Apple processes iCloud and Keychain information under
@@ -130,8 +129,9 @@
             iCloud removal option. Turning off iCloud Sync and choosing to keep data in iCloud does
             not delete the iCloud copy. Choosing to remove Leaf data from iCloud deletes Leaf's
             synced CloudKit records and moves available book files to local storage. Source
-            credentials stored in iCloud Keychain must be removed by deleting the corresponding
-            Source or by using Apple's Keychain and iCloud controls.
+            credentials and KOReader authentication keys stored in iCloud Keychain must be removed
+            by deleting the corresponding Source, clearing KOReader settings, or by using Apple's
+            Keychain and iCloud controls.
           </p>
 
           <h2>Sources and user-selected servers</h2>
@@ -141,25 +141,31 @@
             Depending on the Source and what you do, the server may receive your IP address, Source
             credentials or access tokens, search terms, feed requests, book and cover requests, and
             download activity. The server operator may retain request logs and other information
-            under its own privacy policy. Deadpan does not control user-selected servers. Use HTTPS
-            Sources when possible because an HTTP server does not provide transport encryption.
+            under its own privacy policy. Deadpan does not control user-selected servers. HTTPS is
+            selected by default. If you choose HTTP while adding or changing a Source, Leaf shows a
+            persistent warning and requires confirmation before saving or connecting because HTTP
+            does not provide transport encryption; credentials and activity may be visible to
+            others on the network.
           </p>
 
           <h2>KOReader Sync</h2>
           <p>
-            KOReader Sync is optional and connects directly to the server URL you choose. When you
-            create a KOReader account, Leaf sends the username and password you enter to that server.
-            For later authentication and synchronization, Leaf sends the username and a derived
-            authentication key. A progress update includes a document-matching hash derived from the
-            book file or filename, the reading position, completion percentage, and the device label
-            “Leaf.” Leaf does not send the book file or book text to the KOReader server.
+            KOReader Sync is optional and connects directly to the server URL you choose. HTTPS is
+            selected by default. Choosing HTTP while adding or changing the server displays a
+            persistent warning and requires confirmation before saving or connecting because the
+            connection is unencrypted. Leaf derives the KOReader authentication key from the
+            password on your device, then sends the username and derived key to the selected server
+            for authentication and synchronization. Leaf does not send or store the password after
+            setup. A progress update includes a document-matching hash derived from the book file or
+            filename, the reading position, completion percentage, and the device label “Leaf.” Leaf
+            does not send the book file or book text to the KOReader server.
           </p>
           <p>
-            Clearing KOReader settings in Leaf removes the saved configuration and local
-            authentication key, but it does not delete the KOReader account or progress already held
-            by the selected server. Contact that server's operator to access or delete server-side
-            KOReader information. The server operator controls its own security, retention, and
-            deletion practices.
+            Clearing KOReader settings removes the saved configuration and authentication key from
+            Leaf and its synced storage, but it does not delete the KOReader account or progress
+            already held by the selected server. Contact that server's operator to access or delete
+            server-side KOReader information. The server operator controls its own security,
+            retention, and deletion practices.
           </p>
 
           <h2>Optional app analytics</h2>
@@ -293,6 +299,10 @@
 
         <div class="privacy-updates">
           <h2>Changes to this policy</h2>
+          <div class="policy-update">
+            <p class="policy-update-date">August 9, 2026</p>
+            <p>Documented HTTPS defaults and the explicit warning and confirmation required when adding or changing a Source or KOReader Sync server to use unencrypted HTTP. Documented that the KOReader authentication key may sync through iCloud Keychain.</p>
+          </div>
           <div class="policy-update">
             <p class="policy-update-date">August 7, 2026</p>
             <p>Added analytics retention and reliable deletion requests that stop future collection, iCloud and Keychain storage details, and disclosures for Sources and KOReader servers. Clarified that linked analytics remain optional, off by default, and are not used for tracking.</p>
