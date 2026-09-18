@@ -173,7 +173,8 @@ a {
 }
 
 .eyebrow,
-.feature-kicker {
+.feature-kicker,
+.feature-link {
   color: var(--accent-green);
   text-transform: uppercase;
   letter-spacing: 0.14em;
