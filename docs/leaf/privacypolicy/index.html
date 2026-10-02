@@ -85,11 +85,12 @@
           <h2 id="privacy-summary-title">Your books stay yours.</h2>
           <ul>
             <li>App usage analytics are optional and off by default.</li>
+            <li>Optional analytics can include Leaf Pro purchase-flow, trial or subscription state, and coarse Pro feature engagement, but never receipts, transaction identifiers, prices, payment credentials, or Apple Account information.</li>
             <li>Leaf does not sell or rent personal information, show advertising, or track you across other companies' apps or websites.</li>
             <li>Leaf never sends book files or book text to analytics services.</li>
             <li>Information is sent to iCloud, Sources, or KOReader servers only when needed for features you choose.</li>
           </ul>
-          <p class="privacy-updated">Last updated August 9, 2026</p>
+          <p class="privacy-updated">Last updated October 2, 2026</p>
         </section>
         <div class="privacy-copy">
           <p>
@@ -175,14 +176,17 @@
             Settings.
           </p>
           <p>
-            If enabled, Leaf uses PostHog's United States-hosted service to collect product
-            interaction and other usage data for the sole purpose of understanding and improving
+            If enabled, Leaf uses PostHog's United States-hosted service to collect Product
+            Interaction, Purchase History, and Other Usage Data solely to understand and improve
             Leaf. Events can include app launches; screens and features used; imports, downloads,
-            sharing, shelves, iCloud settings, and reading activity; aggregate values such as library
-            size, session duration, pages read, and completion percentage; app version, operating
-            system, and basic device information; a randomly generated PostHog app-installation
-            identifier; and a pseudonymous Leaf analytics identifier with a source label indicating
-            whether it came from iCloud or this app installation.
+            sharing, shelves, iCloud settings, and reading activity; Leaf Pro paywall views,
+            purchase attempts and outcomes, whether access is inactive or provided through an
+            introductory free trial or paid subscription, and trial start or converted or lapsed
+            lifecycle state; aggregate values such as library size, session duration, pages read,
+            and completion percentage; app version, operating system, and basic device information;
+            a randomly generated PostHog app-installation identifier; and a pseudonymous Leaf
+            analytics identifier with a source label indicating whether it came from iCloud or this
+            app installation.
           </p>
           <p>
             PostHog maintains a minimal pseudonymous person record keyed by the PostHog installation
@@ -203,12 +207,16 @@
             preferences.
           </p>
           <p>
-            Book-related analytics may include an opaque library book identifier, file size, position
-            count, language, publication year, whether basic metadata or a cover is present, reading
-            status, approximate completion percentage, and the number of books in the library after
-            an import or deletion. Analytics do not include book files, book text, titles, author
-            names, descriptions, Source names, Source URLs, filenames, file paths, file hashes,
-            iCloud account names, email addresses, or an exact reading location.
+            Book-related analytics may include an opaque library book identifier, file size,
+            position count, language, publication year, whether basic metadata or a cover is
+            present, reading status, approximate completion percentage, and the number of books in
+            the library after an import or deletion. Analytics do not include book files, book text,
+            titles, author names, descriptions, Source names, Source URLs, filenames, file paths,
+            file hashes, iCloud account names, or email addresses. If a KOReader Sync pull fails or
+            reaches only the chapter instead of the saved position, optional analytics include the
+            saved position marker, completion percentage when available, and a failure category to
+            help diagnose sync issues. The marker describes a location within the book; it does not
+            contain book text.
           </p>
           <p>
             Leaf disables PostHog session replay, surveys, automatic element interaction capture,
@@ -263,9 +271,15 @@
           <p>
             Leaf Pro subscriptions are purchased and managed through StoreKit and the App Store.
             Apple handles payment credentials, billing, renewal, cancellation, refunds, taxes, and
-            the association with your Apple Account. Leaf receives entitlement and transaction status
-            on the device so it can unlock Leaf Pro. Leaf does not operate a payment server or receive
-            your full payment information.
+            the association with your Apple Account. Leaf receives entitlement and transaction
+            status on the device so it can unlock Leaf Pro. When Share Analytics is enabled, Leaf
+            also sends PostHog bounded subscription analytics: paywall views; the Leaf Pro product
+            identifier; purchase-flow outcomes such as started, purchased, pending, canceled,
+            unverified, or failed; coarse access state such as inactive, introductory free trial, or
+            paid subscriber; and trial lifecycle outcomes such as started, converted, or lapsed.
+            Leaf does not operate a payment server or send PostHog App Store receipts, transaction
+            identifiers, original transaction identifiers, prices, billing or expiration dates,
+            Apple Account information, or payment credentials.
           </p>
 
           <h2>Sharing and protection</h2>
@@ -299,6 +313,10 @@
 
         <div class="privacy-updates">
           <h2>Changes to this policy</h2>
+          <div class="policy-update">
+            <p class="policy-update-date">October 2, 2026</p>
+            <p>Disclosed optional KOReader Sync failure diagnostics containing the saved position marker, completion percentage, and failure category. Disclosed optional linked Purchase History analytics for Leaf Pro purchase flows, introductory trials, subscription access, and coarse Pro feature engagement.</p>
+          </div>
           <div class="policy-update">
             <p class="policy-update-date">August 9, 2026</p>
             <p>Documented HTTPS defaults and the explicit warning and confirmation required when adding or changing a Source or KOReader Sync server to use unencrypted HTTP. Documented that the KOReader authentication key may sync through iCloud Keychain.</p>
