@@ -915,6 +915,19 @@ body.screenshot-lightbox-open {
   box-shadow: 0 28px 60px rgba(0, 0, 0, 0.25);
 }
 
+/* Bookmarks
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.bookmarks {
+  background: var(--paper);
+  text-align: center;
+}
+
+.bookmarks .row {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
 /* App Store Badge
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -927,6 +940,10 @@ body.screenshot-lightbox-open {
   border-radius: 2rem;
   padding: 2.2rem 1.4rem;
   background: linear-gradient(180deg, var(--accent-card) 0%, var(--paper-deep) 100%);
+}
+
+.download-now-lozenge p + p {
+  margin-top: 1rem;
 }
 
 .app-store-badge img {
