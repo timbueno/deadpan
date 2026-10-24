@@ -915,6 +915,116 @@ body.screenshot-lightbox-open {
   box-shadow: 0 28px 60px rgba(0, 0, 0, 0.25);
 }
 
+/* Sync Demonstration
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.sync-demo {
+  background: var(--paper-deep);
+}
+
+.sync-demo-row {
+  max-width: 900px;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+}
+
+.sync-demo-content {
+  width: 100%;
+  min-width: 0;
+}
+
+.sync-demo h2,
+.sync-demo-intro {
+  text-align: center;
+}
+
+.sync-demo-intro {
+  margin-bottom: 2rem;
+}
+
+.sync-demo-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #171813;
+}
+
+.sync-demo-play,
+.sync-demo-video,
+.sync-demo-play img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sync-demo-play img {
+  object-fit: cover;
+}
+
+.sync-demo-play::after {
+  content: "";
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(transparent, #0009);
+  pointer-events: none;
+}
+
+.sync-demo-play-label {
+  position: absolute;
+  z-index: 1;
+  left: clamp(0.75rem, 3vw, 1.5rem);
+  bottom: clamp(0.75rem, 3vw, 1.5rem);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: #fffbf5;
+  color: #241f1a;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
+  font-weight: 600;
+}
+
+.sync-demo-play:hover .sync-demo-play-label {
+  background: #ede9e2;
+}
+
+.sync-demo-play:focus-visible {
+  outline: 4px solid var(--accent-green);
+  outline-offset: -4px;
+}
+
+.sync-demo-play[hidden],
+.sync-demo-video[hidden] {
+  display: none;
+}
+
+.sync-demo-caption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-top: 1rem;
+}
+
+.sync-demo-caption p,
+.sync-demo-caption > a,
+.sync-demo-error {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--muted-ink);
+}
+
+.sync-demo-caption > a {
+  color: var(--accent-green);
+}
+
+.sync-demo-error {
+  margin-top: 0.75rem;
+}
+
 /* Bookmarks
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 

@@ -37,7 +37,7 @@
     } catch {}
   </script>
   <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="./css/leaf.css?v=20261020a">
+  <link rel="stylesheet" href="./css/leaf.css?v=20261024a">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -263,6 +263,29 @@
   </div>
 </section>
 
+<!-- Sync Demonstration Section -->
+
+<section class="sync-demo" aria-labelledby="sync-demo-title">
+  <div class="row sync-demo-row">
+    <div class="sync-demo-content">
+      <h2 id="sync-demo-title">Your place goes with you.</h2>
+      <p class="sync-demo-intro">Pick up on your e-reader where you left off in Leaf.</p>
+      <div class="sync-demo-frame">
+        <a class="sync-demo-play" href="https://www.youtube.com/watch?v=MEW-MOUdHp0" aria-label="Watch Leaf sync demonstration">
+          <img src="https://media.deadpan.io/kosync/leaf-duo-crosspoint-sync-demo-v1.jpg" alt="Leaf on iPhone Duo beside an Xteink X3 running CrossPoint" width="1920" height="1080" loading="lazy" decoding="async">
+          <span class="sync-demo-play-label"><span aria-hidden="true">▶</span> Watch demo · 45 sec</span>
+        </a>
+        <video class="sync-demo-video" controls playsinline preload="none" width="1920" height="1080" aria-label="Leaf sync demonstration" tabindex="0" data-src="https://media.deadpan.io/kosync/leaf-duo-crosspoint-sync-demo-v1.mp4" hidden></video>
+      </div>
+      <div class="sync-demo-caption">
+        <p>Requires Leaf Pro. <span aria-hidden="true">·</span> <a href="https://kosync.deadpan.io">Set up syncing <span aria-hidden="true">→</span></a></p>
+        <a href="https://www.youtube.com/watch?v=MEW-MOUdHp0">Watch on YouTube <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="sync-demo-error" role="status" hidden></p>
+    </div>
+  </div>
+</section>
+
 <div
   class="screenshot-lightbox"
   id="screenshot-lightbox"
@@ -351,5 +374,6 @@
 </footer>
 
 <script src="./scripts/leaf.js?v=20260804a"></script>
+<script src="./scripts/sync-demo.js?v=20261024a"></script>
 </body>
 </html>
